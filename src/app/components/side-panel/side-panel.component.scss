@@ -1,0 +1,51 @@
+@import "../../../theme/mixins";
+
+#side-panel {
+  width: 3em;
+  background-color: transparent;
+  @include flex(column, $gap: 0.5em, $justify: space-between, $align: center);
+  height: 100%;
+  // color: #000324;
+}
+
+* {
+  --ionicon-stroke-width: 40px;
+}
+
+.icon {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.icon:not(.logo) {
+  background-color: #000324;
+  text-align: center;
+}
+
+
+#side-menu {
+  flex-grow: 1;
+  background-color: #fff;
+  color: #000324;
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 15px;
+  list-style-type: none;
+  padding: 1em;
+  @include flex(column, $justify: center, $gap: 2em);
+
+  li {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.logo {
+  background-color: #fff;
+}
+
+img {
+  object-fit: contain;
+}

@@ -1,0 +1,7 @@
+{
+  "name": "studera-ai",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

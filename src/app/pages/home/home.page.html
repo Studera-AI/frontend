@@ -1,0 +1,58 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button color="primary"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>HOME</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content [fullscreen]="true">
+  <div id="main">
+    <app-side-panel></app-side-panel>
+
+    <div id="main-content">
+      <ion-searchbar placeholder="Search" animated="true" inputmode="text" type="text" (ionChange)="onSearchChange($event)" [debounce]="250" class="custom"></ion-searchbar>
+
+      <div id="days">
+        <div *ngFor="let day of info; index as i" class="day" [ngClass]="{'selected': day.selected}">
+          <p>Day {{day.day}}</p>
+          <ion-note color="primary-alt">{{day.selected? day.topic : ""}}</ion-note>
+        </div>
+      </div>
+
+      <div class="notes">
+        <h2>Header</h2>
+
+        <div class="note-item" *ngFor="let note of notes">
+          <h3>{{note.title}}</h3>
+          <p>{{note.content}}</p>
+        </div>
+
+        <hr/>
+
+        <div class="takeaway">
+          <h3>Key Takeaway</h3>
+          <p>{{notes[1].content}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="tools">
+      <div class="top-bar">
+        <div class="icon">
+          <ion-img [src]="notifIconSrc" alt="Settings"></ion-img>
+        </div>
+        <div class="icon--person">
+          <ion-img [src]="personIconSrc" alt="Help"></ion-img>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div id="container">
+    <strong class="capitalize">HOME</strong>
+    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  </div> -->
+
+</ion-content>
