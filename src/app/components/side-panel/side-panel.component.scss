@@ -20,8 +20,11 @@
 }
 
 .icon:not(.logo) {
+  @include flex(column, $justify: center, $align: center);
   background-color: #000324;
+  color: #fff;
   text-align: center;
+  font-size: 2.2em;
 }
 
 
@@ -48,4 +51,18 @@
 
 img {
   object-fit: contain;
+}
+
+
+#side-panel.dark {
+
+  #side-menu {
+    background: #000324;
+    color: white
+  }
+
+  .icon:not(.logo) {
+    background-color: #ffffff;
+    color: #000324;
+  }
 }
