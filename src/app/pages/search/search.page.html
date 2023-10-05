@@ -1,0 +1,59 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>search</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content [fullscreen]="true">
+  <div id="main">
+    <app-side-panel></app-side-panel>
+    <div id="onboarding">
+      <h1>Hi there, let's get started</h1>
+      <ion-searchbar placeholder="Search" animated="true" inputmode="text" type="text" (ionChange)="onSearchChange($event)" [debounce]="250"  style="height: 60px; --border-radius: 15px !important;" class="custom"></ion-searchbar>
+
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col size="6">
+            <ion-card color="dark">
+              <ion-card-header>
+                <ion-card-title>Introduction to Statistics</ion-card-title>
+                <ion-card-subtitle>for beginners in secondary school</ion-card-subtitle>
+              </ion-card-header>
+            </ion-card>
+          </ion-col>
+          <ion-col size="6">
+            <ion-card color="dark">
+              <ion-card-header>
+                <ion-card-title>Introduction to Statistics</ion-card-title>
+                <ion-card-subtitle>for beginners in secondary school</ion-card-subtitle>
+              </ion-card-header>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="6">
+            <ion-card color="dark">
+              <ion-card-header>
+                <ion-card-title>Introduction to Statistics</ion-card-title>
+                <ion-card-subtitle>for beginners in secondary school</ion-card-subtitle>
+              </ion-card-header>
+            </ion-card>
+          </ion-col>
+          <ion-col size="6">
+            <ion-card color="dark">
+              <ion-card-header>
+                <ion-card-title>Introduction to Statistics</ion-card-title>
+                <ion-card-subtitle>for beginners in secondary school</ion-card-subtitle>
+              </ion-card-header>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+  <!-- <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">search</ion-title>
+    </ion-toolbar>
+  </ion-header> -->
+</ion-content>
