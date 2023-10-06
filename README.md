@@ -9,7 +9,7 @@ Clone the Repository:
 
 git clone https://github.com/Studera-AI/frontend.git
 
-Move into the folder
+Move into the folder:
 cd frontend
 
 Install Angular-Ionic and other related dependencies:
