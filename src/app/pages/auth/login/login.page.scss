@@ -57,7 +57,6 @@ img {
 }
 
 img.logo {
-  height: 10em;
   width: 10em;
   object-fit: cover;
 }
@@ -100,6 +99,10 @@ img.logo {
     --ripple-color: #1e1e1e;
     --transition: background-color 15ms ease-in-out;
   }
+  ion-button:hover {
+    --background: var(--ion-color-palette-primary-alt);
+    --color: #ffffff;
+  }
 }
 
 hr {
@@ -108,10 +111,26 @@ hr {
 }
 
 @media (max-width: 480px) {
+  #main-card {
+    width: 86%;
+  }
+  ion-button {
+    width: 60%;
+    height: 25px;
+    margin: auto;
+    font-size: 14px;
+  }
+  img.logo {
+    width: 6em;
+  }
   #signup-form {
     border-radius: 15px;
     padding: 0 1em;
     min-height: 600px;
+
+    span {
+      font-size: 25px;
+    }
 
     ion-card {
       width: 90%;
