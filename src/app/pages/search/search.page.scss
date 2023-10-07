@@ -5,9 +5,23 @@
   background:linear-gradient(rgba(245, 245, 240,.9), rgba(245, 245, 240,.9)), url("../../../assets/images/bg-light.png");
   backdrop-filter: contrast(40%);
   height: 100%;
+  padding: 0.5em;
+  position: relative;
 
   app-side-panel {
     height: 100%;
+  }
+
+  .utilities {
+    position: absolute;
+    right: 0.5em;
+    top: 0.5em;
+    @include flex(row, $justify: center, $align: center, $gap: 0.5em);
+
+    ion-button {
+      --border-radius: 10px;
+      aspect-ratio: 1
+    }
   }
 }
 
@@ -17,6 +31,7 @@
   width: 100%;
   margin-top: auto;
   height: 55%;
+  position: relative;
 
   h1 {
     color: #000;
@@ -33,14 +48,33 @@ ion-searchbar.custom {
   --clear-button-color: #000034;
   --border-radius: 15px !important;
   max-width: 1000px;
-  // --box-shadow: none;
-  // border: 3px solid #0003244D;
-  // border-radius: 15px !important;
+  transform: scale(1.2);
+  width: 80%;
+  position: relative;
+  color: #000034;
+
+
+  &::ng-deep {
+    input.searchbar-input.sc-ion-searchbar-md {
+      padding: 0.5em 0.5em 0.5em 2em !important;
+    }
+  }
+
+  ion-icon {
+    position: absolute;
+    font-size: 1em;
+    right: 1em !important;
+    top: 1em;
+    bottom: 1em;
+    z-index: 1;
+  }
 }
+
 
 ion-grid {
   max-width: 800px;
 }
+
 
 ion-card {
   --background: #ffffff !important;
@@ -48,10 +82,19 @@ ion-card {
   background: #fff !important;
   box-shadow: none;
   border: 2px solid #00032433;
+  border-radius: 10px;
 
   ion-card-subtitle {
     opacity: 0.5;
   }
+}
+
+.continue {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  text-transform: none;
+  --border-radius: 10px;
 }
 
 #main.dark {
@@ -69,6 +112,10 @@ ion-card {
     --placeholder-color: #f0f0f0;
     --icon-color: #f0f0f0;
     --clear-button-color: #f0f0f0;
+
+    ion-icon {
+      color: #fff;
+    }
   }
 
   ion-card {

@@ -8,9 +8,9 @@
   // color: #000324;
 }
 
-* {
-  --ionicon-stroke-width: 40px;
-}
+// * {
+//   --ionicon-stroke-width: 10px !important;
+// }
 
 .icon {
   width: 100%;
@@ -32,16 +32,17 @@
   flex-grow: 1;
   background-color: #fff;
   color: #000324;
-  width: 90%;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
   border-radius: 15px;
   list-style-type: none;
-  padding: 1em;
-  @include flex(column, $justify: center, $gap: 2em);
+  padding: 0;
+  @include flex(column, $justify: center, $gap: 2em, $align: center);
 
   li {
     width: 100%;
     text-align: center;
+    font-size: 1.25em;
   }
 }
 

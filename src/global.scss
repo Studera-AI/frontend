@@ -104,3 +104,32 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: #568aad;
 }
+
+.searchbar-md .searchbar-search-icon{
+  right: 47px !important; //Adjust right position as your need
+  left: auto !important;
+}
+
+.input-error {
+  position: absolute;
+  top: calc(100% + 0.5em);
+  left: 0;
+  font-size: 0.7rem;
+  --color: #ff5353;
+  color: #ff5353;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+
+}
+
+@keyframes error-display {
+
+}
+
+form {
+  ion-item {
+    position: relative;
+    overflow: visible;
+  }
+}
+

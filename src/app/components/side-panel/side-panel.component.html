@@ -4,13 +4,15 @@
   </div>
 
   <ul id="side-menu">
-    <li><ion-icon name="home-outline"></ion-icon></li>
-    <li><ion-icon name="layers-outline"></ion-icon></li>
-    <li><ion-icon name="pie-chart-outline"></ion-icon></li>
+    <li><ion-icon [src]="layerIconSrc"></ion-icon></li>
+    <li><ion-icon [src]="homeIconSrc"></ion-icon></li>
+    <li><ion-icon [src]="pieIconSrc"></ion-icon></li>
+    <li><ion-icon [src]="bookIconSrc"></ion-icon></li>
   </ul>
 
   <div class="icon">
-    <ion-icon slot="icon-only" name="settings-outline"></ion-icon>
+    <!-- <ion-icon slot="icon-only" name="settings-outline"></ion-icon> -->
+    <ion-icon slot="icon-only" [src]="settingsIconSrc"></ion-icon>
   </div>
   <div class="icon">
     <ion-icon slot="icon-only" name="help-circle-outline"></ion-icon>

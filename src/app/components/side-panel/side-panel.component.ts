@@ -8,6 +8,10 @@ import { Component, HostBinding, Input, OnInit } from '@angular/core';
 export class SidePanelComponent  implements OnInit {
   settingsIconSrc = "../../../assets/icon/settings-outline.svg";
   helpIconSrc = "../../../assets/icon/help-circle-outline.svg";
+  layerIconSrc = "../../../assets/icon/layer-custom.svg";
+  homeIconSrc = "../../../assets/icon/home-custom.svg";
+  pieIconSrc = "../../../assets/icon/pie-custom.svg";
+  bookIconSrc = "../../../assets/icon/book-custom.svg";
 
   @Input() theme: string = "";
   @HostBinding('class.dark')

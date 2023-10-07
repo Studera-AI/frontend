@@ -4,41 +4,48 @@
       <ion-col size="8" sizeXs="12" sizeMd="8" id="signup-form">
         <p><span>Sign-up</span></p>
         <ion-card>
-          <img class="logo" alt="Logo Placeholder" src="../../../../assets/images/logo-placeholder.png" />
+          <img class="logo" alt="Logo Placeholder" src="../../../../assets/icon/logo.png" />
           <ion-card-content style="width: 100% !important;">
             <!-- Awesome content -->
-            <form>
+            <form [formGroup]="signupForm">
               <ion-grid>
                 <ion-row>
                   <ion-col size="6">
                     <ion-item lines="none">
-                      <ion-input color="palette-primary-alt" type="text" label="NAME" labelPlacement="floating"></ion-input>
+                      <ion-input color="palette-primary-alt" type="text" label="NAME" labelPlacement="floating" formControlName="name"></ion-input>
+                      <ion-note class="input-error" *ngIf="signupForm.controls.name.dirty && signupForm.controls.name.invalid">3 or more characters</ion-note>
                     </ion-item>
                   </ion-col>
                   <ion-col size="6">
-                    <ion-item lines="none">
-                      <ion-input color="palette-primary-alt" type="text" label="EMAIL ADDRESS" labelPlacement="floating"></ion-input>
+                    <ion-item lines="none" >
+                      <ion-input color="palette-primary-alt" type="email" label="EMAIL ADDRESS" labelPlacement="floating" formControlName="email"></ion-input>
+                      <ion-note class="input-error" *ngIf="signupForm.controls.email.dirty && signupForm.controls.email.invalid">Invalid email</ion-note>
                     </ion-item>
                   </ion-col>
                 </ion-row>
                 <ion-row>
                   <ion-col size="12">
                     <ion-item lines="none">
-                      <ion-input color="palette-primary-alt" type="password" label="PASSWORD" labelPlacement="floating"></ion-input>
+                      <ion-input color="palette-primary-alt" type="password" label="PASSWORD" labelPlacement="floating" formControlName="password"></ion-input>
+                      <ion-note class="input-error" *ngIf="signupForm.controls.password.dirty && signupForm.controls.password.invalid">8 or more characters</ion-note>
                     </ion-item>
                   </ion-col>
                 </ion-row>
                 <ion-row>
                   <ion-col size="12">
                     <ion-item lines="none">
-                      <ion-input color="palette-primary-alt" type="password" label="CONFIRM PASSWORD" labelPlacement="floating"></ion-input>
+                      <ion-input color="palette-primary-alt" type="password" label="CONFIRM PASSWORD" labelPlacement="floating" formControlName="confirmPassword"></ion-input>
+                      <ion-note class="input-error" *ngIf="signupForm.controls.confirmPassword.dirty && signupForm.controls.password.value !== signupForm.controls.confirmPassword.value">Passwords must match</ion-note>
                     </ion-item>
                   </ion-col>
                 </ion-row>
                 <ion-row>
                   <ion-col size="12">
-                    <ion-button size="large" expand="block" color="palette-primary-alt" fill="solid">
-                      <b>Sign-up</b>
+                    <ion-button size="large" expand="block" color="palette-primary-alt" fill="solid" (click)="onSubmit()" [disabled]="utilSrv.loading()">
+                      <b *ngIf="!utilSrv.loading(); else loading">Sign-up</b>
+                      <ng-template #loading>
+                        <ion-spinner name="crescent"></ion-spinner>
+                      </ng-template>
                     </ion-button>
                   </ion-col>
                 </ion-row>
