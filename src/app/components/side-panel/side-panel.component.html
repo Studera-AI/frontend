@@ -1,20 +1,24 @@
 <div id="side-panel">
   <div class="icon logo">
-    <img src="../../../assets/icon/logo.png" alt="Studera logo">
+    <img src="../../../assets/icon/logo.png" alt="Studera logo" />
   </div>
 
   <ul id="side-menu">
-    <li><ion-icon [src]="layerIconSrc"></ion-icon></li>
+    <li id="active"><ion-icon [src]="layerIconSrc"></ion-icon></li>
     <li><ion-icon [src]="homeIconSrc"></ion-icon></li>
     <li><ion-icon [src]="pieIconSrc"></ion-icon></li>
     <li><ion-icon [src]="bookIconSrc"></ion-icon></li>
   </ul>
-
-  <div class="icon">
-    <!-- <ion-icon slot="icon-only" name="settings-outline"></ion-icon> -->
-    <ion-icon slot="icon-only" [src]="settingsIconSrc"></ion-icon>
-  </div>
-  <div class="icon">
-    <ion-icon slot="icon-only" name="help-circle-outline"></ion-icon>
-  </div>
+  <ion-button (click)="onClick()" [color]="checkButtonColor(theme)">
+    <ion-icon
+      slot="icon-only"
+      src="../../../assets/icon/settings-outline.svg"
+    ></ion-icon>
+  </ion-button>
+  <ion-button (click)="onClick()" [color]="checkButtonColor(theme)">
+    <ion-icon
+      slot="icon-only"
+      src="../../../assets/icon/help-circle-outline.svg"
+    ></ion-icon>
+  </ion-button>
 </div>

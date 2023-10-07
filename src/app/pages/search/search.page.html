@@ -6,21 +6,40 @@
 
 <ion-content [fullscreen]="true">
   <div id="main" [class]="theme">
-
     <div class="utilities">
       <ion-button (click)="onClick()" [color]="checkButtonColor(theme)">
-        <ion-icon slot="icon-only" src="../../../assets/icon/notification.svg"></ion-icon>
+        <ion-icon
+          slot="icon-only"
+          src="../../../assets/icon/notification.svg"
+        ></ion-icon>
       </ion-button>
-      <ion-button (click)="onClick()" [color]="checkButtonColor(theme)" size="large">
-        <ion-icon slot="icon-only" src="../../../assets/icon/person.svg"></ion-icon>
+      <ion-button (click)="onClick()" [color]="checkButtonColor(theme)">
+        <ion-icon
+          slot="icon-only"
+          src="../../../assets/icon/person.svg"
+        ></ion-icon>
       </ion-button>
     </div>
 
     <app-side-panel [theme]="theme"></app-side-panel>
     <div id="onboarding">
       <h1>Hi there, let's get started</h1>
-      <ion-searchbar class="ion-no-padding" search-icon="none" placeholder="Search for a topic to study" animated="true" inputmode="text" type="text" (ionChange)="onSearchChange($event)" [debounce]="250"  style="height: 60px; --border-radius: 15px !important;" class="custom">
-        <ion-icon slot="end" src="../../../assets/icon/search-custom.svg"></ion-icon>
+      <ion-searchbar
+        class="ion-no-padding"
+        search-icon="none"
+        placeholder="Search for a topic to study"
+        animated="true"
+        inputmode="text"
+        type="text"
+        (ionChange)="onSearchChange($event)"
+        [debounce]="250"
+        style="height: 60px; --border-radius: 15px !important"
+        class="custom"
+      >
+        <ion-icon
+          slot="end"
+          src="../../../assets/icon/search-custom.svg"
+        ></ion-icon>
       </ion-searchbar>
 
       <ion-grid fixed>
@@ -29,15 +48,17 @@
             <ion-card color="dark">
               <ion-card-header>
                 <ion-card-title>Introduction to Statistics</ion-card-title>
-                <ion-card-subtitle>for beginners in secondary school</ion-card-subtitle>
+                <ion-card-subtitle
+                  >for beginners in secondary school</ion-card-subtitle
+                >
               </ion-card-header>
             </ion-card>
           </ion-col>
           <ion-col size="6">
             <ion-card color="dark">
               <ion-card-header>
-                <ion-card-title>Introduction to Statistics</ion-card-title>
-                <ion-card-subtitle>for beginners in secondary school</ion-card-subtitle>
+                <ion-card-title>Deep Learning</ion-card-title>
+                <ion-card-subtitle>in computer science</ion-card-subtitle>
               </ion-card-header>
             </ion-card>
           </ion-col>
@@ -46,28 +67,33 @@
           <ion-col size="6">
             <ion-card color="dark">
               <ion-card-header>
-                <ion-card-title>Introduction to Statistics</ion-card-title>
-                <ion-card-subtitle>for beginners in secondary school</ion-card-subtitle>
+                <ion-card-title>Fluids and Thermodynamics</ion-card-title>
+                <ion-card-subtitle>in advanced physics</ion-card-subtitle>
               </ion-card-header>
             </ion-card>
           </ion-col>
           <ion-col size="6">
             <ion-card color="dark">
               <ion-card-header>
-                <ion-card-title>Introduction to Statistics</ion-card-title>
-                <ion-card-subtitle>for beginners in secondary school</ion-card-subtitle>
+                <ion-card-title>Further Mathematics</ion-card-title>
+                <ion-card-subtitle
+                  >according to university level programs</ion-card-subtitle
+                >
               </ion-card-header>
             </ion-card>
           </ion-col>
         </ion-row>
       </ion-grid>
 
-      <ion-button (click)="onClick()" class="continue" [color]="checkButtonColor(theme)" size="large">
+      <ion-button
+        (click)="onClick()"
+        class="continue"
+        [color]="checkButtonColor(theme)"
+        size="large"
+      >
         Continue
         <ion-icon slot="end" name="arrow-forward-outline"></ion-icon>
       </ion-button>
-
-
     </div>
   </div>
   <!-- <ion-header collapse="condense">
