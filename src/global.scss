@@ -16,7 +16,7 @@
 @import "@ionic/angular/css/normalize.css";
 @import "@ionic/angular/css/structure.css";
 @import "@ionic/angular/css/typography.css";
-@import '@ionic/angular/css/display.css';
+@import "@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "@ionic/angular/css/padding.css";
@@ -24,7 +24,6 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
-
 
 ion-grid {
   padding: 0;
@@ -80,7 +79,6 @@ html {
   font-family: "URW-Geometric", sans-serif;
 }
 
-
 // Scrollbar
 
 ::-webkit-scrollbar {
@@ -105,7 +103,7 @@ html {
   background: #568aad;
 }
 
-.searchbar-md .searchbar-search-icon{
+.searchbar-md .searchbar-search-icon {
   right: 47px !important; //Adjust right position as your need
   left: auto !important;
 }
@@ -119,11 +117,9 @@ html {
   color: #ff5353;
   font-weight: 600;
   letter-spacing: 0.1em;
-
 }
 
 @keyframes error-display {
-
 }
 
 form {
@@ -132,4 +128,3 @@ form {
     overflow: visible;
   }
 }
-
