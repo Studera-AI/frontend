@@ -104,8 +104,14 @@ img.logo {
     --color: #ffffff;
   }
 }
+#login {
+  display: none;
+}
 
 @media (max-width: 480px) {
+  #login {
+    display: block;
+  }
   #main-card {
     width: 86%;
   }

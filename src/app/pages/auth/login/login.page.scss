@@ -109,8 +109,14 @@ hr {
   border: 1px solid black;
   background-color: black;
 }
+#signup {
+  display: none;
+}
 
 @media (max-width: 480px) {
+  #signup {
+    display: block;
+  }
   #main-card {
     width: 86%;
   }
