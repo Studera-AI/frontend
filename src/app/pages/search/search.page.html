@@ -20,8 +20,9 @@
         ></ion-icon>
       </ion-button>
     </div>
-
-    <app-side-panel [theme]="theme"></app-side-panel>
+    <div class="app-side-panel">
+      <app-side-panel [theme]="theme"></app-side-panel>
+    </div>
     <div id="onboarding">
       <h1>Hi there, let's get started</h1>
       <ion-searchbar
@@ -44,7 +45,7 @@
 
       <ion-grid fixed>
         <ion-row>
-          <ion-col size="6">
+          <ion-col size-sm="12" size-md="6">
             <ion-card color="dark">
               <ion-card-header>
                 <ion-card-title>Introduction to Statistics</ion-card-title>
@@ -54,7 +55,7 @@
               </ion-card-header>
             </ion-card>
           </ion-col>
-          <ion-col size="6">
+          <ion-col size="6" id="only-md">
             <ion-card color="dark">
               <ion-card-header>
                 <ion-card-title>Deep Learning</ion-card-title>
@@ -64,7 +65,7 @@
           </ion-col>
         </ion-row>
         <ion-row>
-          <ion-col size="6">
+          <ion-col size-sm="12" size-md="6">
             <ion-card color="dark">
               <ion-card-header>
                 <ion-card-title>Fluids and Thermodynamics</ion-card-title>
@@ -72,7 +73,7 @@
               </ion-card-header>
             </ion-card>
           </ion-col>
-          <ion-col size="6">
+          <ion-col size="6" id="only-md">
             <ion-card color="dark">
               <ion-card-header>
                 <ion-card-title>Further Mathematics</ion-card-title>
