@@ -57,7 +57,7 @@ ion-button {
   border-radius: 15px;
   list-style-type: none;
   padding: 0;
-  @include flex(column, $justify: center, $gap: 1.5em, $align: center);
+  @include flex(column, $justify: center, $gap: 1em, $align: center);
 
   li {
     width: 100%;
@@ -77,12 +77,19 @@ img {
 
 #side-panel.dark {
   #side-menu {
-    background: #000324;
+    background: rgba(19, 19, 14, 0.9);
     color: white;
   }
 
   .icon:not(.logo) {
     background-color: #ffffff;
-    color: #000324;
+    color: #000324 !important;
+  }
+}
+
+//TODO: HAMBURGER MENU INSTEAD
+@media (max-width: 768px) {
+  #side-panel {
+    display: none;
   }
 }

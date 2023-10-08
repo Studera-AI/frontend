@@ -6,25 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search.page.scss'],
 })
 export class SearchPage implements OnInit {
-  theme = "lark"
+  theme = 'dark';
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
-  onSearchChange(e: any) {
-
-  }
+  onSearchChange(e: any) {}
 
   checkButtonColor(theme: string) {
-    let buttonColor = theme !== 'dark'? 'palette-dark': 'dark'
+    let buttonColor = theme !== 'dark' ? 'palette-dark' : 'dark';
 
-    return buttonColor
+    return buttonColor;
   }
 
-  onClick() {
-
-  }
-
+  onClick() {}
 }
