@@ -7,33 +7,73 @@
 <ion-content [fullscreen]="true">
   <ion-grid fixed id="main-card">
     <ion-row>
-      <ion-col size="8" id="signup-form" sizeXs="12" sizeMd="8" id="signup-form">
+      <ion-col
+        size="8"
+        id="signup-form"
+        sizeXs="12"
+        sizeMd="8"
+        id="signup-form"
+      >
         <p><span>Login</span></p>
         <ion-card>
-          <img class="logo" alt="Logo Placeholder" src="../../../../assets/icon/logo.png" />
-          <ion-card-content style="width: 100% !important;">
+          <img
+            class="logo"
+            alt="Logo Placeholder"
+            src="../../../../assets/icon/logo.png"
+          />
+          <ion-card-content style="width: 100% !important">
             <!-- Awesome content -->
             <form [formGroup]="loginForm">
               <ion-grid>
                 <ion-row>
                   <ion-col size="12">
                     <ion-item lines="none">
-                      <ion-input color="palette-primary-alt" type="text" label="EMAIL" labelPlacement="floating" formControlName="email"></ion-input>
-                      <ion-note class="input-error" *ngIf="loginForm.controls.email.dirty && loginForm.controls.email.invalid">Invalid email</ion-note>
+                      <ion-input
+                        color="palette-primary-alt"
+                        type="text"
+                        label="EMAIL"
+                        labelPlacement="floating"
+                        formControlName="email"
+                      ></ion-input>
+                      <ion-note
+                        class="input-error"
+                        *ngIf="loginForm.controls.email.dirty && loginForm.controls.email.invalid"
+                        >Invalid email</ion-note
+                      >
                     </ion-item>
                   </ion-col>
                 </ion-row>
                 <ion-row>
                   <ion-col size="12">
                     <ion-item lines="none">
-                      <ion-input color="palette-primary-alt" type="password" label="PASSWORD" labelPlacement="floating"  formControlName="password"></ion-input>
-                      <ion-note class="input-error" *ngIf="loginForm.controls.password.dirty && loginForm.controls.password.invalid">Password is required</ion-note>
+                      <ion-input
+                        color="palette-primary-alt"
+                        type="password"
+                        label="PASSWORD"
+                        labelPlacement="floating"
+                        formControlName="password"
+                      ></ion-input>
+                      <ion-note
+                        class="input-error"
+                        *ngIf="loginForm.controls.password.dirty && loginForm.controls.password.invalid"
+                        >Password is required</ion-note
+                      >
                     </ion-item>
                   </ion-col>
                 </ion-row>
+                <ion-row style="height: 2.5em">
+                  <ion-col size="12"></ion-col>
+                </ion-row>
                 <ion-row>
                   <ion-col size="12">
-                    <ion-button size="large" expand="block" color="palette-primary-alt" fill="solid" (click)="onSubmit()" [disabled]="utilSrv.loading()">
+                    <ion-button
+                      size="large"
+                      expand="block"
+                      color="palette-primary-alt"
+                      fill="solid"
+                      (click)="onSubmit()"
+                      [disabled]="utilSrv.loading()"
+                    >
                       <b *ngIf="!utilSrv.loading(); else loading">Login</b>
                       <ng-template #loading>
                         <ion-spinner name="crescent"></ion-spinner>
@@ -41,20 +81,32 @@
                     </ion-button>
                   </ion-col>
                 </ion-row>
-                <ion-row style="height: 7em;">
+                <ion-row style="height: 1.5em">
                   <ion-col size="12"></ion-col>
                 </ion-row>
                 <ion-row class="third-party-auth">
-                  <ion-col size="2">
-                    <img src="../../../../assets/icon/google-auth.svg" alt="Google auth">
+                  <ion-col size="1.7">
+                    <img
+                      src="../../../../assets/icon/google-auth.svg"
+                      alt="Google auth"
+                    />
                   </ion-col>
-                  <ion-col size="2">
-                    <img src="../../../../assets/icon/x-auth.svg" alt="Twitter auth">
+                  <ion-col size="1.7">
+                    <img
+                      src="../../../../assets/icon/x-auth.svg"
+                      alt="Twitter auth"
+                    />
                   </ion-col>
-                  <ion-col size="2">
-                    <img src="../../../../assets/icon/facebook-auth.svg" alt="Facebook Auth">
+                  <ion-col size="1.7">
+                    <img
+                      src="../../../../assets/icon/facebook-auth.svg"
+                      alt="Facebook Auth"
+                    />
                   </ion-col>
                 </ion-row>
+                <p id="signup">
+                  Don't have an account? <a href="/signup">Sign Up</a>
+                </p>
               </ion-grid>
             </form>
           </ion-card-content>
@@ -63,18 +115,23 @@
       <ion-col size="4" id="login-cta">
         <h2>Around for your first time?</h2>
         <p>Join us now and unlock a world of learning</p>
-        <hr/>
-        <ul style="visibility: hidden;">
-          <li>Gain access to a diverse range tailor fit study materials.</li>
+        <!-- <hr /> -->
+        <ul style="visibility: hidden">
+          <!-- <li>Gain access to a diverse range tailor fit study materials.</li> -->
           <li>Track your progress, set goals, and achieve academic success.</li>
         </ul>
-        <br>
-        <p>Signing up takes only a
-          minute. Don't miss out on
-          this opportunity to invest
-          in your future.
+        <br />
+        <p>
+          Signing up takes only a minute. Don't miss out on this opportunity to
+          invest in your future.
         </p>
-        <ion-button size="large" (click)="goToSignup()" expand="block" fill="outline" shape="round">
+        <ion-button
+          size="large"
+          (click)="goToSignup()"
+          expand="block"
+          fill="outline"
+          shape="round"
+        >
           <b>Register</b>
         </ion-button>
       </ion-col>

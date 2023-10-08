@@ -1,18 +1,20 @@
-@import '../../../../theme/mixins';
+@import "../../../../theme/mixins";
 
-ion-content{
-  --background: #fff url('../../../../assets/images/main_bg.png') no-repeat center center / cover;
-  min-height: 100vh;
+ion-content {
+  --background: #fff url("../../../../assets/images/main_bg.png") no-repeat
+    center center / cover;
+  // min-height: 100vh;
 }
 
 #main-card {
   background-color: transparent;
-  width: 80%;
-  height: 80%;
+  width: 78%;
+  min-height: 80%;
+  height: fit-content;
   margin: 5% auto;
 }
 
-ion-row{
+ion-row {
   height: 100%;
   margin: 0.5em 0;
 }
@@ -25,7 +27,7 @@ ion-item {
 
 #signup-form {
   height: 100%;
-  background-color: #D9D9D933;
+  background-color: #d9d9d933;
   backdrop-filter: blur(20px);
   border-radius: 25px 0px 0px 25px;
   padding: 0 3em;
@@ -35,8 +37,10 @@ ion-item {
     padding-bottom: 2px;
     font-weight: 600;
     line-height: 1.3em;
-    color: #000324;
-    border-bottom: 2px solid #000324;
+    // color: #000324;
+    color: white;
+    font-size: 30px;
+    border-bottom: 3px solid white;
   }
 
   ion-card {
@@ -48,15 +52,18 @@ ion-item {
   }
 }
 
+img {
+  cursor: pointer;
+}
+
 img.logo {
-  height: 10em;
   width: 10em;
   object-fit: cover;
 }
 
-
-::ng-deep ion-input .label-text{
-  color: #FFFFFF40;
+::ng-deep ion-input .label-text {
+  // color: #ffffff40;
+  color: white;
 }
 
 .third-party-auth {
@@ -77,7 +84,8 @@ img.logo {
     font-weight: 600;
   }
 
-  p, li {
+  p,
+  li {
     color: black;
     font-weight: 600;
   }
@@ -87,17 +95,45 @@ img.logo {
     --border-color: var(--ion-color-palette-primary-alt);
     --border-style: solid;
     --border-width: 3px;
-    --color:  var(--ion-color-palette-primary-alt);
+    --color: var(--ion-color-palette-primary-alt);
     --ripple-color: #1e1e1e;
     --transition: background-color 15ms ease-in-out;
   }
+  ion-button:hover {
+    --background: var(--ion-color-palette-primary-alt);
+    --color: #ffffff;
+  }
+}
+#login {
+  display: none;
 }
 
 @media (max-width: 480px) {
+  #login {
+    display: block;
+  }
+  #main-card {
+    width: 86%;
+  }
+  ion-button {
+    width: 60%;
+    height: 25px;
+    margin: auto;
+    font-size: 14px;
+    margin-top: 1.8em;
+    margin-bottom: 10px;
+  }
+  img.logo {
+    width: 6em;
+  }
   #signup-form {
     border-radius: 15px;
     padding: 0 1em;
     min-height: 600px;
+
+    span {
+      font-size: 25px;
+    }
 
     ion-card {
       width: 90%;

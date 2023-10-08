@@ -15,8 +15,22 @@
 .icon {
   width: 100%;
   aspect-ratio: 1;
-  border-radius: 15px;
+  border-radius: 17px;
   padding: 10px;
+}
+
+ion-icon {
+  cursor: pointer !important;
+}
+
+#active {
+  background-color: #212faa33;
+  border-right: 3px solid #212faa;
+}
+
+ion-button {
+  --border-radius: 10px;
+  aspect-ratio: 1;
 }
 
 .icon:not(.logo) {
@@ -27,6 +41,12 @@
   font-size: 2.2em;
 }
 
+.logo {
+  background-color: #fff;
+  @include flex(column, $justify: center, $align: center);
+  cursor: pointer;
+  border: 2px solid #00032450;
+}
 
 #side-menu {
   flex-grow: 1;
@@ -37,29 +57,28 @@
   border-radius: 15px;
   list-style-type: none;
   padding: 0;
-  @include flex(column, $justify: center, $gap: 2em, $align: center);
+  @include flex(column, $justify: center, $gap: 1.5em, $align: center);
 
   li {
     width: 100%;
     text-align: center;
     font-size: 1.25em;
+    padding: 15px 10px;
+    border-top-left-radius: 14px;
+    border-bottom-left-radius: 14px;
+    @include flex(column, $justify: center, $align: center);
   }
-}
-
-.logo {
-  background-color: #fff;
 }
 
 img {
   object-fit: contain;
+  width: 4em;
 }
 
-
 #side-panel.dark {
-
   #side-menu {
     background: #000324;
-    color: white
+    color: white;
   }
 
   .icon:not(.logo) {
