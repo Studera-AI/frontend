@@ -1,22 +1,10 @@
 @import "../../../theme/mixins";
 
 #side-panel {
-  width: 3em;
+  width: 2em;
   background-color: transparent;
-  @include flex(column, $gap: 0.5em, $justify: space-between, $align: center);
+  @include flex(column, $gap: 0.25em, $justify: space-between, $align: center);
   height: 100%;
-  // color: #000324;
-}
-
-// * {
-//   --ionicon-stroke-width: 10px !important;
-// }
-
-.icon {
-  width: 100%;
-  aspect-ratio: 1;
-  border-radius: 17px;
-  padding: 10px;
 }
 
 ion-icon {
@@ -30,22 +18,16 @@ ion-icon {
 
 ion-button {
   --border-radius: 10px;
+  max-width: 100%;
   aspect-ratio: 1;
+  --padding-end: 0px;
+  --padding-start: 0px;
 }
 
-.icon:not(.logo) {
-  @include flex(column, $justify: center, $align: center);
-  background-color: #000324;
-  color: #fff;
-  text-align: center;
-  font-size: 2.2em;
-}
-
-.logo {
-  background-color: #fff;
-  @include flex(column, $justify: center, $align: center);
-  cursor: pointer;
-  border: 2px solid #00032450;
+#logo {
+  --border-color: #ddd;
+  --border-style: solid;
+  --border-width: 2px;
 }
 
 #side-menu {
@@ -62,17 +44,12 @@ ion-button {
   li {
     width: 100%;
     text-align: center;
-    font-size: 1.25em;
-    padding: 15px 10px;
+    font-size: 1em;
+    padding: 10px;
     border-top-left-radius: 14px;
     border-bottom-left-radius: 14px;
     @include flex(column, $justify: center, $align: center);
   }
-}
-
-img {
-  object-fit: contain;
-  width: 4em;
 }
 
 #side-panel.dark {

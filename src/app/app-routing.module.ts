@@ -20,11 +20,11 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('./pages/auth/login/login.module').then( m => m.LoginPageModule)
   },
-  // {
-  //   path: 'home',
-  //   loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule),
-  //   canActivate: [AuthGuard]
-  // },
+  {
+    path: 'home',
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule),
+    // canActivate: [AuthGuard]
+  },
   {
     path: 'search',
     loadChildren: () => import('./pages/search/search.module').then( m => m.SearchPageModule),
