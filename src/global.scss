@@ -108,6 +108,19 @@ html {
   left: auto !important;
 }
 
+.searchbar-input.sc-ion-searchbar-md {
+  border-radius: 15px;
+  background-position: left 8px center;
+  height: auto;
+  // font-size: 1.1rem;
+  border: 2px solid #B7BAAF;
+  font-weight: 400;
+  color: #000034;
+  background-color: transparent;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
 .input-error {
   position: absolute;
   top: calc(100% + 0.5em);

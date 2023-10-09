@@ -1,0 +1,47 @@
+@import '../../../theme/mixins';
+
+* {
+  color: black;
+}
+
+#main {
+  @include flex(row, $gap: 1em);
+  background: linear-gradient(
+      rgba(245, 245, 240, 0.9),
+      rgba(245, 245, 240, 0.9)
+    ),
+    url("../../../assets/images/bg-light.png");
+  backdrop-filter: contrast(40%);
+  height: 100vh;
+  padding: 0.5em;
+  position: relative;
+
+  app-side-panel {
+    height: 100% !important;
+  }
+
+  .utilities {
+    position: absolute;
+    right: 1em;
+    top: 0.5em;
+    @include flex(row, $justify: center, $align: center, $gap: 0.5em);
+
+    ion-button {
+      --border-radius: 10px;
+      aspect-ratio: 1;
+    }
+  }
+}
+
+#main-content {
+  min-width: 50%;
+  max-width: 50%;
+  height: 100%;
+}
+
+ion-item {
+  box-shadow: 0px 4px 15px 0px #00000033;
+  --border-radius: 10px;
+  overflow: hidden;
+  border-radius: 10px !important;
+}
