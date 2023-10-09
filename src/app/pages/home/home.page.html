@@ -12,12 +12,37 @@
     <app-side-panel></app-side-panel>
 
     <div id="main-content">
-      <ion-searchbar placeholder="Search" animated="true" inputmode="text" type="text" (ionChange)="onSearchChange($event)" [debounce]="250" class="custom"></ion-searchbar>
+      <div id="search-content">
+        <ion-searchbar
+          placeholder="Search"
+          animated="true"
+          inputmode="text"
+          type="text"
+          (ionChange)="onSearchChange($event)"
+          [debounce]="250"
+          class="custom"
+        ></ion-searchbar>
+        <ion-button (click)="onClick()" [color]="checkButtonColor(theme)">
+          <ion-icon
+            slot="end"
+            src="../../../assets/icon/search-custom.svg"
+          ></ion-icon>
+        </ion-button>
+      </div>
 
       <div id="days">
-        <div *ngFor="let day of info; index as i" class="day" [ngClass]="{'selected': day.selected}">
-          <p>Day {{day.day}}</p>
-          <ion-note color="primary-alt">{{day.selected? day.topic : ""}}</ion-note>
+        <div class="scroll-container">
+          <div class="overlay"></div>
+          <div
+            *ngFor="let day of info; index as i"
+            class="day"
+            [ngClass]="{'selected': day.selected}"
+          >
+            <h3>Day {{day.day}}</h3>
+            <ion-note color="primary-alt"
+              >{{day.selected? day.topic : ""}}</ion-note
+            >
+          </div>
         </div>
       </div>
 
@@ -29,7 +54,7 @@
           <p>{{note.content}}</p>
         </div>
 
-        <hr/>
+        <hr />
 
         <div class="takeaway">
           <h3>Key Takeaway</h3>
@@ -39,14 +64,39 @@
     </div>
 
     <div id="tools">
-      <div class="top-bar">
-        <div class="icon">
-          <ion-img [src]="notifIconSrc" alt="Settings"></ion-img>
-        </div>
-        <div class="icon--person">
-          <ion-img [src]="personIconSrc" alt="Help"></ion-img>
-        </div>
+      <div class="utilities">
+        <ion-button (click)="onClick()" [color]="checkButtonColor(theme)">
+          <ion-icon
+            slot="icon-only"
+            src="../../../assets/icon/notification.svg"
+          ></ion-icon>
+        </ion-button>
+        <ion-button (click)="onClick()" [color]="checkButtonColor(theme)">
+          <ion-icon
+            slot="icon-only"
+            src="../../../assets/icon/person.svg"
+          ></ion-icon>
+        </ion-button>
       </div>
+      <div id="clock">
+        <div class="content">
+          <p>Focus Session</p>
+        </div>
+        <div class="clocks"></div>
+      </div>
+      <div id="bot">
+        <div class="content"></div>
+        <ion-searchbar
+          placeholder="Type a message"
+          animated="true"
+          inputmode="text"
+          type="text"
+          (ionChange)="onSearchChange($event)"
+          [debounce]="250"
+          class="custom"
+        ></ion-searchbar>
+      </div>
+      <div id="note"></div>
     </div>
   </div>
 
@@ -54,5 +104,4 @@
     <strong class="capitalize">HOME</strong>
     <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
   </div> -->
-
 </ion-content>
