@@ -186,7 +186,8 @@ ion-content {
     }
     .clocks {
       height: 40%;
-      background-color: red;
+      background: linear-gradient(0deg, #2A2C4D, #2A2C4D), linear-gradient(0deg, rgba(52, 55, 87, 0.8), rgba(52, 55, 87, 0.8));
+      @include flex(row, $justify: space-around);
     }
   }
   #bot {
