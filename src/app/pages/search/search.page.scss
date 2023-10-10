@@ -48,34 +48,21 @@
   }
 }
 
-ion-searchbar.custom {
-  --background: #fff;
-  --color: #000034;
-  --placeholder-color: #00003450;
-  --icon-color: #000034;
-  --clear-button-color: transparent;
-  --border-radius: 15px !important;
-  max-width: 1000px;
-  transform: scale(1.2);
-  width: 78%;
+#main-searchbar {
   position: relative;
-  color: #000034;
-  @include flex(row, $justify: center, $align: center, $gap: 0.5em);
+}
 
-  &::ng-deep {
-    input.searchbar-input.sc-ion-searchbar-md {
-      padding: 0.6em 0.5em 0.5em 2em !important; // THE 0.6 IS A TEMPORARY FIX
-    }
-  }
-
-  ion-icon {
-    position: absolute;
-    font-size: 1em;
-    right: 1.2em !important;
-    top: 1em;
-    bottom: 1em;
-    z-index: 1;
-  }
+#main-searchbar::before {
+  content: "";
+  background: url("../../../assets/icon/search-custom.svg");
+  position: absolute;
+  top: 30%;
+  left: 1em;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 40%;
+  aspect-ratio: 1;
+  z-index: inherit;
 }
 
 ion-grid {
@@ -118,17 +105,16 @@ ion-card-title {
     }
   }
 
-  ion-searchbar.custom {
+  #main-searchbar{
     --background: #ffffff40;
     --color: #fff;
     --placeholder-color: #fff;
     --icon-color: #f0f0f0;
     --clear-button-color: transparent;
     color: #fff;
-
-    ion-icon {
-      color: #fff;
-    }
+  }
+  #main-searchbar::before {
+    color: #fff;
   }
 
   ion-card {

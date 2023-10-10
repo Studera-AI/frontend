@@ -7,7 +7,7 @@
 <ion-content [fullscreen]="true">
   <div id="main" [class]="theme">
     <div class="utilities">
-      <ion-button (click)="onClick()" [color]="checkButtonColor(theme)">
+      <ion-button (click)="onClick()" [color]="checkButtonColor(theme)" size="small">
         <ion-icon
           slot="icon-only"
           src="../../../assets/icon/notification.svg"
@@ -26,7 +26,7 @@
     <div id="onboarding">
       <h1>Hi there, let's get started</h1>
       <ion-searchbar
-        class="ion-no-padding"
+        id="main-searchbar"
         search-icon="none"
         placeholder="Search for a topic to study"
         animated="true"
@@ -35,12 +35,7 @@
         (ionChange)="onSearchChange($event)"
         [debounce]="250"
         style="height: 60px; --border-radius: 15px !important"
-        class="custom"
       >
-        <ion-icon
-          slot="end"
-          src="../../../assets/icon/search-custom.svg"
-        ></ion-icon>
       </ion-searchbar>
 
       <ion-grid fixed>
@@ -90,7 +85,7 @@
         (click)="onClick()"
         class="continue"
         [color]="checkButtonColor(theme)"
-        size="large"
+        size="medium"
       >
         Continue
         <ion-icon slot="end" name="arrow-forward-outline"></ion-icon>
