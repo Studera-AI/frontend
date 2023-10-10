@@ -8,7 +8,8 @@ ion-content {
 }
 #main {
   height: 100%;
-  grid-template-columns: 4em 50% auto;
+  margin-left: 3rem;
+  grid-template-columns: 50% auto;
   @include flex(row, $gap: 0.5em);
   background: transparent;
 
