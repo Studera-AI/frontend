@@ -9,7 +9,7 @@
 
 <ion-content [fullscreen]="true">
   <div id="main">
-    <app-side-panel></app-side-panel>
+    <app-side-panel style="position: fixed; left: 0.5rem; top: 0" [active]="2"></app-side-panel>
 
     <div id="main-content">
       <div id="search-content">
@@ -22,6 +22,7 @@
           [debounce]="250"
           class="custom"
         ></ion-searchbar>
+
         <ion-button (click)="onClick()" [color]="checkButtonColor(theme)">
           <ion-icon
             slot="end"
@@ -47,7 +48,7 @@
       </div>
 
       <div class="notes">
-        <h2>Header</h2>
+        <h2>{{data.title === "" ? "-" : data.title}}</h2>
 
         <div class="note-item" *ngFor="let note of notes">
           <h3>{{note.title}}</h3>
@@ -67,6 +68,7 @@
       <div class="utilities">
         <ion-button (click)="onClick()" [color]="checkButtonColor(theme)">
           <ion-icon
+            size="small"
             slot="icon-only"
             src="../../../assets/icon/notification.svg"
           ></ion-icon>
@@ -80,13 +82,19 @@
       </div>
       <div id="clock">
         <div class="content">
-          <p>Focus Session</p>
+          <small>Focus Session</small>
+          <p style="font-size: 1.5em !important; margin-top: 0;">{{date.hour}}:{{date.minute}}</p>
         </div>
-        <div class="clocks"></div>
+        <div class="clocks">
+          <ion-icon slot="icon-only" size="large" src="../../../assets/icon/clock-1.svg"></ion-icon>
+          <ion-icon slot="icon-only" size="large" src="../../../assets/icon/clock-2.svg"></ion-icon>
+          <ion-icon slot="icon-only" size="large" src="../../../assets/icon/clock-3.svg"></ion-icon>
+        </div>
       </div>
       <div id="bot">
         <div class="content"></div>
-        <ion-searchbar
+        <input type="text" id="chatbot-input" placeholder="Type a message"/>
+        <!-- <ion-searchbar
           placeholder="Type a message"
           animated="true"
           inputmode="text"
@@ -94,7 +102,7 @@
           (ionChange)="onSearchChange($event)"
           [debounce]="250"
           class="custom"
-        ></ion-searchbar>
+        ></ion-searchbar> -->
       </div>
       <div id="note"></div>
     </div>

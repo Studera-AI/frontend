@@ -1,0 +1,51 @@
+<ion-content [fullscreen]="true">
+  <div id="main">
+    <app-side-panel [theme]="theme"></app-side-panel>
+
+    <div id="main-content">
+      <h2>Duration</h2>
+      <form [formGroup]="promptForm">
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="6">
+              <ion-note>Length</ion-note>
+              <ion-item color="dark" class="length-input">
+                <ion-input formControlName="length" type="number" placeholder="Enter a length"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col size="6">
+              <ion-note>Unit</ion-note>
+              <ion-item color="dark">
+                <ion-select formControlName="unit" value="days" placeholder="Select unit">
+                  <ion-select-option value="hours">Hours</ion-select-option>
+                  <ion-select-option value="days">Days</ion-select-option>
+                  <ion-select-option value="weeks">Weeks</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="12">
+              <ion-note>Preferred resource type</ion-note>
+              <ion-item color="dark">
+                <ion-select formControlName="type" value="days" placeholder="Select unit">
+                  <ion-select-option value="text">Text</ion-select-option>
+                  <ion-select-option value="video">Video</ion-select-option>
+                  <ion-select-option value="none">None</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="12">
+              <ion-button (click)="onSubmit()" type="submit" color="palette-dark" expand="block">
+                Generate
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </form>
+    </div>
+
+  </div>
+</ion-content>

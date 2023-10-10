@@ -1,4 +1,5 @@
 import { Component, HostBinding, Input, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-side-panel',
@@ -14,10 +15,11 @@ export class SidePanelComponent implements OnInit {
   bookIconSrc = '../../../assets/icon/book-custom.svg';
 
   @Input() theme: string = '';
+  @Input() active: number = 1;
   @HostBinding('class.dark')
   isDark: boolean = true;
 
-  constructor() {}
+  constructor(private navCtrl: NavController) {}
 
   ngOnInit() {
     if (this.theme == 'dark') {
@@ -33,4 +35,8 @@ export class SidePanelComponent implements OnInit {
   }
 
   onClick() {}
+
+  goto(route: string) {
+    this.navCtrl.navigateForward(route);
+  }
 }

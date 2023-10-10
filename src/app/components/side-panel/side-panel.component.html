@@ -4,10 +4,10 @@
   </ion-button>
 
   <ul id="side-menu">
-    <li id="active"><ion-icon [src]="layerIconSrc"></ion-icon></li>
-    <li><ion-icon [src]="homeIconSrc"></ion-icon></li>
-    <li><ion-icon [src]="pieIconSrc"></ion-icon></li>
-    <li><ion-icon [src]="bookIconSrc"></ion-icon></li>
+    <li [ngClass]="{'active': active === 1 }" (click)="goto('/search')"><ion-icon [src]="layerIconSrc"></ion-icon></li>
+    <li [ngClass]="{'active': active === 2 }" (click)="goto('/home')"><ion-icon [src]="homeIconSrc"></ion-icon></li>
+    <li [ngClass]="{'active': active === 3 }"><ion-icon [src]="pieIconSrc"></ion-icon></li>
+    <li [ngClass]="{'active': active === 4 }"><ion-icon [src]="bookIconSrc"></ion-icon></li>
   </ul>
 
   <ion-button (click)="onClick()" [color]="checkButtonColor(theme)">

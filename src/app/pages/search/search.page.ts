@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -6,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search.page.scss'],
 })
 export class SearchPage implements OnInit {
-  theme = 'dark';
+  theme = 'light';
+  searchTerm = '';
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {}
 
@@ -21,4 +23,19 @@ export class SearchPage implements OnInit {
   }
 
   onClick() {}
+
+  searchCustomTitle() {
+    if (this.searchTerm.length < 1) {
+      return;
+    }
+
+    this.navigateToPrompt(this.searchTerm)
+  }
+
+  navigateToPrompt(title: string) {
+    this.router.navigate(
+      ['/timeframe'],
+      {queryParams: {title}, replaceUrl: false}
+    )
+  }
 }

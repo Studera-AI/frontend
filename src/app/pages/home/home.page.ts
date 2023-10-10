@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, effect } from '@angular/core';
+import { PromptData } from 'src/app/interfaces/client';
+import { ClientService } from 'src/app/services/client.service';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
-  constructor() {}
+  constructor(private clientSrv: ClientService) {
+    effect(() => {
+      this.data = clientSrv.promptData()
+    })
+  }
+  data: PromptData = {
+    data: "",
+    title: "",
+    timeframe: "",
+    type: "",
+  };
+
+  date: any;
 
   notifIconSrc = '../../../assets/icon/notification.svg';
   personIconSrc = '../../../assets/icon/person.svg';
@@ -36,7 +50,21 @@ export class HomePage implements OnInit {
     },
   ];
 
-  ngOnInit() {}
+  ngOnInit() {
+    let now = new Date;
+    this.date = {
+      minute: now.getMinutes(),
+      hour: now.getHours()
+    }
+
+    setInterval(() => {
+      let now = new Date();
+      this.date = {
+        minutes: now.getMinutes(),
+        hours: now.getHours()
+      }
+    }, 60*1000 )
+  }
 
   onSearchChange(e: Event) {}
 

@@ -27,8 +27,6 @@ export class SignupPage implements OnInit {
     confirmPassword: new FormControl('', [Validators.required, Validators.minLength(8)])
   })
 
-  e = effect(() => {console.log(this.utilSrv.loading())})
-
   ngOnInit() {
     // effect(() => {console.log(this.utilSrv.loading())})
   }

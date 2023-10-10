@@ -38,6 +38,10 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   {
+    path: 'timeframe',
+    loadChildren: () => import('./pages/timeframe/timeframe.module').then( m => m.TimeframePageModule)
+  },
+  {
     path: '**',
     loadChildren: () =>
       import('./pages/auth/signup/signup.module').then(
