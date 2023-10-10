@@ -68,6 +68,7 @@
       <div class="utilities">
         <ion-button (click)="onClick()" [color]="checkButtonColor(theme)">
           <ion-icon
+            size="small"
             slot="icon-only"
             src="../../../assets/icon/notification.svg"
           ></ion-icon>
@@ -92,7 +93,8 @@
       </div>
       <div id="bot">
         <div class="content"></div>
-        <ion-searchbar
+        <input type="text" id="chatbot-input" placeholder="Type a message"/>
+        <!-- <ion-searchbar
           placeholder="Type a message"
           animated="true"
           inputmode="text"
@@ -100,7 +102,7 @@
           (ionChange)="onSearchChange($event)"
           [debounce]="250"
           class="custom"
-        ></ion-searchbar>
+        ></ion-searchbar> -->
       </div>
       <div id="note"></div>
     </div>

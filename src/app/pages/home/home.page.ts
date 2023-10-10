@@ -58,7 +58,7 @@ export class HomePage implements OnInit {
     }
 
     setInterval(() => {
-      let now = new Date;
+      let now = new Date();
       this.date = {
         minutes: now.getMinutes(),
         hours: now.getHours()
