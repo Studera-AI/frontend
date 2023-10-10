@@ -3,11 +3,11 @@
     <ion-row>
       <ion-col size="8" sizeXs="12" sizeMd="8" id="signup-form">
         <p><span>Sign Up</span></p>
-        <ion-card>
+        <ion-card style="width: 80% !important">
           <img
             class="logo"
             alt="Logo Placeholder"
-            src="../../../../assets/icon/logo.png"
+            src="../../../../assets/icon/logo.svg"
           />
           <ion-card-content style="width: 100% !important">
             <!-- Awesome content -->
@@ -16,8 +16,7 @@
                 <ion-row>
                   <ion-col size="6">
                     <ion-item lines="none">
-                      <ion-input
-                        color="palette-primary-alt"
+                      <ion-input color="palette-primary-alt"
                         type="text"
                         label="NAME"
                         labelPlacement="floating"
@@ -86,7 +85,6 @@
                 <ion-row>
                   <ion-col size="12">
                     <ion-button
-                      size="large"
                       expand="block"
                       color="palette-primary-alt"
                       fill="solid"
@@ -101,19 +99,19 @@
                   </ion-col>
                 </ion-row>
                 <ion-row class="third-party-auth">
-                  <ion-col size="1.7">
+                  <ion-col size="1.5">
                     <img
                       src="../../../../assets/icon/google-auth.svg"
                       alt="Google auth"
                     />
                   </ion-col>
-                  <ion-col size="1.7">
+                  <ion-col size="1.5">
                     <img
                       src="../../../../assets/icon/x-auth.svg"
                       alt="Twitter auth"
                     />
                   </ion-col>
-                  <ion-col size="1.7">
+                  <ion-col size="1.5">
                     <img
                       src="../../../../assets/icon/facebook-auth.svg"
                       alt="Facebook Auth"
@@ -137,7 +135,6 @@
         <br />
         <p>Already have an account?</p>
         <ion-button
-          size="large"
           (click)="goToLogin()"
           expand="block"
           fill="outline"

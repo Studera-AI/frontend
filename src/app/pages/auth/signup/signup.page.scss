@@ -39,7 +39,7 @@ ion-item {
     line-height: 1.3em;
     // color: #000324;
     color: white;
-    font-size: 30px;
+    // font-size: px;
     border-bottom: 3px solid white;
   }
 
@@ -57,7 +57,7 @@ img {
 }
 
 img.logo {
-  width: 10em;
+  width: 7.5em;
   object-fit: cover;
 }
 
@@ -78,9 +78,9 @@ img.logo {
 }
 
 #login-cta {
-  padding: 0 8%;
+  padding: 0 2em;
   h2 {
-    font-size: 35px;
+    font-size: 30px;
     font-weight: 600;
   }
 
@@ -88,6 +88,7 @@ img.logo {
   li {
     color: black;
     font-weight: 600;
+    font-size: .95rem;
   }
   background-color: var(--ion-color-palette-secondary);
   ion-button {
