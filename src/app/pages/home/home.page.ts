@@ -20,6 +20,8 @@ export class HomePage implements OnInit {
     type: "",
   };
 
+  date: any;
+
   notifIconSrc = '../../../assets/icon/notification.svg';
   personIconSrc = '../../../assets/icon/person.svg';
 
@@ -48,7 +50,21 @@ export class HomePage implements OnInit {
     },
   ];
 
-  ngOnInit() {}
+  ngOnInit() {
+    let now = new Date;
+    this.date = {
+      minute: now.getMinutes(),
+      hour: now.getHours()
+    }
+
+    setInterval(() => {
+      let now = new Date;
+      this.date = {
+        minutes: now.getMinutes(),
+        hours: now.getHours()
+      }
+    }, 60*1000 )
+  }
 
   onSearchChange(e: Event) {}
 
