@@ -1,9 +1,8 @@
 @import "../../../../theme/mixins";
 
 ion-content {
-  --background: #fff url("../../../../assets/images/main_bg.png") no-repeat
-    center center / cover;
-  // min-height: 100vh;
+  --background: #fff url("../../../../assets/images/main_bg.png") no-repeat center center / cover;
+  max-height: 100vh !important;
 }
 
 #main-card {
@@ -11,7 +10,7 @@ ion-content {
   width: 78%;
   min-height: 80%;
   height: fit-content;
-  margin: 5% auto;
+  margin: 1% auto;
 }
 
 ion-row {
