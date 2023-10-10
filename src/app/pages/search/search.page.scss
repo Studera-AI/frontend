@@ -71,7 +71,7 @@ ion-grid {
 
 ion-card {
   --background: #ffffff !important;
-  padding-left: 2em;
+  padding-left: 1em;
   background: #fff !important;
   box-shadow: none;
   border: 2px solid #00032433;
@@ -129,58 +129,6 @@ ion-card-title {
     }
   }
 }
-
-// .dark {
-//   #main {
-//     @include flex(row, $gap: 1em);
-//     background:linear-gradient(rgba(245, 245, 240,.9), rgba(245, 245, 240,.9)), url("../../../assets/images/bg-light.png");
-//     backdrop-filter: contrast(40%);
-//     height: 100%;
-
-//     app-side-panel {
-//       height: 100%;
-//     }
-//   }
-
-//   #onboarding {
-//     @include flex(column);
-//     padding: 1em;
-//     width: 100%;
-//     margin-top: auto;
-//     height: 55%;
-
-//     h1 {
-//       color: #000;
-//       font-size: 2em;
-//       font-weight: bold;
-//     }
-//   }
-
-//   ion-searchbar.custom {
-//     --background: #fff;
-//     --color: #000034;
-//     --placeholder-color: #000034;
-//     --icon-color: #000034;
-//     --clear-button-color: #000034;
-//     --border-radius: 15px !important
-//     // --box-shadow: none;
-//     // border: 3px solid #0003244D;
-//     // border-radius: 15px !important;
-//   }
-
-//   ion-card {
-//     --background: #ffffff !important;
-//     padding-left: 2em;
-//     background: #fff !important;
-//     box-shadow: none;
-//     border: 2px solid #00032433;
-
-//     ion-card-subtitle {
-//       opacity: 0.5;
-//     }
-//   }
-
-// }
 
 @media (max-width: 768px) {
   #main {
