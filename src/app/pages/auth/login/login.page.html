@@ -71,9 +71,9 @@
                       color="palette-primary-alt"
                       fill="solid"
                       (click)="onSubmit()"
-                      [disabled]="utilSrv.loading()"
+                      [disabled]="utilSrv.loginLoading()"
                     >
-                      <b *ngIf="!utilSrv.loading(); else loading">Login</b>
+                      <b *ngIf="!utilSrv.loginLoading(); else loading">Login</b>
                       <ng-template #loading>
                         <ion-spinner name="crescent"></ion-spinner>
                       </ng-template>

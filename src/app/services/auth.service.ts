@@ -21,7 +21,7 @@ export class AuthService {
   ) {}
 
   register(data: RegisterData) {
-    this.utilSrv.loading.set(true);
+    this.utilSrv.loginLoading.set(true);
     console.log('Registering');
     this.httpClient.post(`${this.baseUrl}/signup`, data).subscribe({
       next: (result: any) => {
@@ -40,16 +40,16 @@ export class AuthService {
       },
       error: (e) => {
         console.log(e);
-        this.utilSrv.loading.set(false);
+        this.utilSrv.loginLoading.set(false);
       },
       complete: () => {
-        this.utilSrv.loading.set(false);
+        this.utilSrv.loginLoading.set(false);
       },
     });
   }
 
   login(data: LoginData) {
-    this.utilSrv.loading.set(true);
+    this.utilSrv.signupLoading.set(true);
     console.log('Logging in');
     this.httpClient.post(`${this.baseUrl}/signin`, data).subscribe({
       next: (result: any) => {
@@ -68,10 +68,10 @@ export class AuthService {
       },
       error: (e) => {
         console.log(e);
-        this.utilSrv.loading.set(false);
+        this.utilSrv.signupLoading.set(false);
       },
       complete: () => {
-        this.utilSrv.loading.set(false);
+        this.utilSrv.signupLoading.set(false);
       },
     });
   }

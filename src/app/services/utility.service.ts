@@ -4,7 +4,8 @@ import { Injectable, signal } from '@angular/core';
   providedIn: 'root'
 })
 export class UtilityService {
-  loading = signal(false)
+  loginLoading = signal(false)
+  signupLoading = signal(false)
 
   constructor() { }
 }
