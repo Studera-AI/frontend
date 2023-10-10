@@ -77,10 +77,18 @@ ion-card {
   border: 2px solid #00032433;
   cursor: pointer;
   border-radius: 14px;
+  transition: 150ms !important;
+  --transition: 150ms !important;
 
   ion-card-subtitle {
     opacity: 0.5;
   }
+}
+
+ion-card:hover {
+  // transform: translateZ(100px);
+  transform: translateY(-5px) translateX(-5px);
+  box-shadow: 8px 10px 15px 1px rgba(0, 0, 0, .25);
 }
 
 .continue {

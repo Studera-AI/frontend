@@ -6,3 +6,7 @@ export interface PromptRequest {
   timeframe: string
   type: string
 }
+
+export interface PromptData extends PromptRequest{
+  data: string
+}
