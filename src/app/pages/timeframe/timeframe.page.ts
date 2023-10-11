@@ -46,8 +46,6 @@ export class TimeframePage implements OnInit {
     }
 
     this.clientSrv.sendPromptRequest(data);
-
-
   }
 
 }
