@@ -10,7 +10,8 @@ ion-content {
   width: 78%;
   min-height: 80%;
   height: fit-content;
-  margin: 1% auto;
+  margin: auto;
+  margin-top: 4% !important;
 }
 
 ion-row {
@@ -94,7 +95,7 @@ img.logo {
     --background: #ffffff;
     --border-color: var(--ion-color-palette-primary-alt);
     --border-style: solid;
-    --border-width: 3px;
+    --border-width: 2px;
     --color: var(--ion-color-palette-primary-alt);
     --ripple-color: #1e1e1e;
     --transition: background-color 15ms ease-in-out;
