@@ -29,17 +29,25 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () =>
       import('./pages/home/home.module').then((m) => m.HomePageModule),
-      canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
   },
   {
     path: 'search',
     loadChildren: () =>
       import('./pages/search/search.module').then((m) => m.SearchPageModule),
-      canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
   },
   {
     path: 'timeframe',
-    loadChildren: () => import('./pages/timeframe/timeframe.module').then( m => m.TimeframePageModule)
+    loadChildren: () =>
+      import('./pages/timeframe/timeframe.module').then(
+        (m) => m.TimeframePageModule
+      ),
+  },
+  {
+    path: 'test',
+    loadChildren: () =>
+      import('./pages/test/test.module').then((m) => m.TestPageModule),
   },
   {
     path: '**',
