@@ -6,6 +6,7 @@ ion-content {
   --padding-top: 0.5em;
   --background: #f5f5f0;
 }
+
 #main {
   height: 100%;
   margin-left: 3rem;
@@ -36,7 +37,7 @@ ion-content {
   height: 100%;
   color: #000;
   display: grid;
-  grid-template-rows: 2em 8rem auto;
+  grid-template-rows: 2em auto;
   grid-column: 2/3;
   gap: 1em;
 }
