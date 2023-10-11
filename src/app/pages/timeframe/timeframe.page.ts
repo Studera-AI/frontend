@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { take } from 'rxjs';
 import { PromptRequest } from 'src/app/interfaces/client';
 import { ClientService } from 'src/app/services/client.service';
+import { UtilityService } from 'src/app/services/utility.service';
 
 @Component({
   selector: 'app-timeframe',
@@ -22,11 +23,12 @@ export class TimeframePage implements OnInit {
 
   constructor(
     private clientSrv: ClientService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    public utilSrv: UtilityService
   ) { }
 
   ngOnInit() {
-    this.activatedRoute.queryParamMap.pipe(take(1)).subscribe((p: any) => {
+    this.activatedRoute.queryParamMap.subscribe((p: any) => {
       console.log(p);
       this.title = p['params']['title'];
     })

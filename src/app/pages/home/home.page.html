@@ -35,13 +35,13 @@
         <div class="scroll-container">
           <div class="overlay"></div>
           <div
-            *ngFor="let day of info; index as i"
+            *ngFor="let day of plans; index as i"
             class="day"
-            [ngClass]="{'selected': day.selected}"
+            [ngClass]="{'selected': i === 2}"
           >
             <h4>Day {{day.day}}</h4>
             <ion-note color="primary-alt"
-              >{{day.selected? day.topic : ""}}</ion-note
+              >{{i === 2 ? day.title : ""}}</ion-note
             >
           </div>
         </div>
@@ -50,10 +50,35 @@
       <div class="notes">
         <h2>{{data.title === "" ? "-" : data.title}}</h2>
 
-        <div class="note-item" *ngFor="let note of notes">
-          <h3>{{note.title}}</h3>
-          <p>{{note.content}}</p>
-        </div>
+        <swiper-container>
+          <swiper-slide  *ngFor="let note of plans">
+            <div class="note-item">
+              <h3>{{note.day}}</h3>
+              <ion-note>{{note.title}}({{note.time_allocation}})</ion-note>
+              <p style="margin-top: 0">{{note.summary}}</p>
+              <ion-note>Learning resources</ion-note>
+              <ul>
+                <li *ngFor="let resource of note.resources">
+                  <span>{{resource.description}}</span>:<a [href]="resource.link">{{resource.link}}</a>
+                </li>
+              </ul>
+
+            </div>
+          </swiper-slide>
+        </swiper-container>
+
+        <!-- <div class="note-item" *ngFor="let note of plans">
+          <h3>{{note.day}}</h3>
+          <ion-note>{{note.title}}({{note.time_allocation}})</ion-note>
+          <p style="margin-top: 0">{{note.summary}}</p>
+          <ion-note>Learning resources</ion-note>
+          <ul>
+            <li *ngFor="let resource of note.resources">
+              <span>{{resource.description}}</span>:<a [href]="resource.link">{{resource.link}}</a>
+            </li>
+          </ul>
+
+        </div> -->
 
         <hr />
 
@@ -84,7 +109,7 @@
       <div id="clock">
         <div class="content">
           <small>Focus Session</small>
-          <p style="font-size: 1.5em !important; margin-top: 0;">{{formatTime(date.hour)}} : {{formatTime(date.minute)}}</p>
+          <p style="font-size: 1.5em !important; margin-top: 0;">{{date.hour < 10 ? '0' + date.hour : date.hour}} : {{date.minute < 10 ? '0'+date.minute : date.minute}}</p>
         </div>
         <div class="clocks">
           <ion-icon slot="icon-only" size="large" src="../../../assets/icon/clock-1.svg"></ion-icon>
