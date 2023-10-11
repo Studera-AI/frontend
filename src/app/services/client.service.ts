@@ -23,23 +23,23 @@ export class ClientService {
   sendPromptRequest(data: PromptRequest) {
     console.log("SENDING");
     this.utilSrv.promptLoading.set(true)
-    // this.http.post(`${environment.baseUrl}/resource`, data).subscribe({
-    //   next: (r: any) => {
-    //     console.log(r)
-    //     let promptData: PromptData = {...data, data: r.data }
-    //     console.log(promptData);
-    //     this.promptData.set(promptData);
-    //     this.router.navigate(["/home"]);
+    this.http.post(`${environment.baseUrl}/resource`, data).subscribe({
+      next: (r: any) => {
+        console.log(r)
+        let promptData: PromptData = {...data, data: r.data }
+        console.log(promptData);
+        this.promptData.set(promptData);
+        this.router.navigate(["/home"]);
 
-    //   },
-    //   error: (e) => {
-    //     this.utilSrv.promptLoading.set(false);
-    //     console.log(e)
-    //   },
-    //   complete: () => {
-    //     console.log("COMPLETED!")
-    //     this.utilSrv.promptLoading.set(false);
-    //   }
-    // })
+      },
+      error: (e) => {
+        this.utilSrv.promptLoading.set(false);
+        console.log(e)
+      },
+      complete: () => {
+        console.log("COMPLETED!")
+        this.utilSrv.promptLoading.set(false);
+      }
+    })
   }
 }
