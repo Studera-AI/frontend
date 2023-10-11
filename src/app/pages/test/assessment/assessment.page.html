@@ -1,0 +1,30 @@
+<ion-content [fullscreen]="true">
+  <div id="main" [class]="theme">
+    <!--SIDE PANEL AND UTILITY ICONS-->
+    <div class="utilities">
+      <ion-button (click)="onClick()" [color]="checkButtonColor(theme)">
+        <ion-icon
+          slot="icon-only"
+          src="../../../assets/icon/notification.svg"
+          size="small"
+        ></ion-icon>
+      </ion-button>
+      <ion-button (click)="onClick()" [color]="checkButtonColor(theme)">
+        <ion-icon
+          slot="icon-only"
+          src="../../../assets/icon/person.svg"
+          size="small"
+        ></ion-icon>
+      </ion-button>
+    </div>
+    <div class="app-side-panel">
+      <app-side-panel [theme]="theme"></app-side-panel>
+    </div>
+    <!--END-->
+
+    <!--MAIN CONTENT-->
+    <div id="main-content">
+      <h1>Introduction to Biology</h1>
+    </div>
+  </div>
+</ion-content>

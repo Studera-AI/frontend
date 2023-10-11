@@ -1,0 +1,52 @@
+<ion-content [fullscreen]="true">
+  <div id="main" [class]="theme">
+    <!--SIDE PANEL AND UTILITY ICONS-->
+    <div class="utilities">
+      <ion-button (click)="onClick()" [color]="checkButtonColor(theme)">
+        <ion-icon
+          slot="icon-only"
+          src="../../../assets/icon/notification.svg"
+          size="small"
+        ></ion-icon>
+      </ion-button>
+      <ion-button (click)="onClick()" [color]="checkButtonColor(theme)">
+        <ion-icon
+          slot="icon-only"
+          src="../../../assets/icon/person.svg"
+          size="small"
+        ></ion-icon>
+      </ion-button>
+    </div>
+    <div class="app-side-panel">
+      <app-side-panel [theme]="theme"></app-side-panel>
+    </div>
+    <!--END-->
+
+    <!--MAIN CONTENT-->
+    <div id="main-content">
+      <h1>Introduction to Biology</h1>
+      <div class="introduction">
+        <h3>Instructions</h3>
+        <p>
+          This test consists of 10 multiple-choice questions that will test your
+          knowledge and skills. You have a time limit of 10 minutes to complete
+          the entire quiz. Make sure to read each question carefully and select
+          your answers thoughtfully. Good luck!
+        </p>
+        <p>
+          This test can be retaken as many times as you want. However, the
+          questions will be randomized each time you take the test.
+        </p>
+      </div>
+      <ion-button
+        (click)="navigateToAssessment()"
+        class="continue"
+        [color]="checkButtonColor(theme)"
+        size="large"
+      >
+        Start Quiz
+        <ion-icon slot="end" name="arrow-forward-outline"></ion-icon>
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

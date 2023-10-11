@@ -1,27 +1,34 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>search</ion-title>
+  </ion-toolbar>
+</ion-header> -->
 
 <ion-content [fullscreen]="true">
   <div id="main" [class]="theme">
     <div class="utilities">
-      <ion-button (click)="onClick()" [color]="checkButtonColor(theme)" size="small">
+      <ion-button (click)="onClick()" [color]="checkButtonColor(theme)">
         <ion-icon
           slot="icon-only"
           src="../../../assets/icon/notification.svg"
+          size="small"
         ></ion-icon>
       </ion-button>
-      <ion-button (click)="onClick()" [color]="checkButtonColor(theme)" size='small'>
+      <ion-button (click)="onClick()" [color]="checkButtonColor(theme)">
         <ion-icon
           slot="icon-only"
           src="../../../assets/icon/person.svg"
+          size="small"
         ></ion-icon>
       </ion-button>
     </div>
     <div class="app-side-panel">
-      <app-side-panel [theme]="theme" [active]="1"></app-side-panel>
+      <app-side-panel [theme]="theme"></app-side-panel>
     </div>
     <div id="onboarding">
       <h1>Hi there, let's get started</h1>
       <ion-searchbar
-        id="main-searchbar"
+        class="ion-no-padding"
         search-icon="none"
         placeholder="Search for a topic to study"
         animated="true"
@@ -30,14 +37,18 @@
         (ionChange)="onSearchChange($event)"
         [debounce]="250"
         style="height: 60px; --border-radius: 15px !important"
-        [(ngModel)]="searchTerm"
+        class="custom"
       >
+        <ion-icon
+          slot="end"
+          src="../../../assets/icon/search-custom.svg"
+        ></ion-icon>
       </ion-searchbar>
 
       <ion-grid fixed>
         <ion-row>
-          <ion-col size-sm="12" offset="1" size-md="5">
-            <ion-card color="dark" (click)="navigateToPrompt('Introduction to Statistics')">
+          <ion-col size-sm="12" size-md="6">
+            <ion-card color="dark">
               <ion-card-header>
                 <ion-card-title>Introduction to Statistics</ion-card-title>
                 <ion-card-subtitle
@@ -46,8 +57,8 @@
               </ion-card-header>
             </ion-card>
           </ion-col>
-          <ion-col size="5" id="only-md">
-            <ion-card color="dark" (click)="navigateToPrompt('Deep Learning')">
+          <ion-col size="6" id="only-md">
+            <ion-card color="dark">
               <ion-card-header>
                 <ion-card-title>Deep Learning</ion-card-title>
                 <ion-card-subtitle>in computer science</ion-card-subtitle>
@@ -56,21 +67,21 @@
           </ion-col>
         </ion-row>
         <ion-row>
-          <ion-col size-sm="12" offset="1" size-md="5">
-            <ion-card color="dark" (click)="navigateToPrompt('Fluids and Thermodynamics')">
+          <ion-col size-sm="12" size-md="6">
+            <ion-card color="dark">
               <ion-card-header>
                 <ion-card-title>Fluids and Thermodynamics</ion-card-title>
                 <ion-card-subtitle>in advanced physics</ion-card-subtitle>
               </ion-card-header>
             </ion-card>
           </ion-col>
-          <ion-col size="5" id="only-md">
-            <ion-card color="dark" (click)="navigateToPrompt('Further Mathematics')">
+          <ion-col size="6" id="only-md">
+            <ion-card color="dark">
               <ion-card-header>
                 <ion-card-title>Further Mathematics</ion-card-title>
-                <ion-card-subtitle>
-                  according to university level programs
-                </ion-card-subtitle>
+                <ion-card-subtitle
+                  >according to university level programs</ion-card-subtitle
+                >
               </ion-card-header>
             </ion-card>
           </ion-col>
@@ -78,7 +89,7 @@
       </ion-grid>
 
       <ion-button
-        (click)="searchCustomTitle()"
+        (click)="onClick()"
         class="continue"
         [color]="checkButtonColor(theme)"
       >
