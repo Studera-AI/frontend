@@ -39,7 +39,7 @@
             class="day"
             [ngClass]="{'selected': day.selected}"
           >
-            <h3>Day {{day.day}}</h3>
+            <h4>Day {{day.day}}</h4>
             <ion-note color="primary-alt"
               >{{day.selected? day.topic : ""}}</ion-note
             >
@@ -75,6 +75,7 @@
         </ion-button>
         <ion-button (click)="onClick()" [color]="checkButtonColor(theme)">
           <ion-icon
+            size="small"
             slot="icon-only"
             src="../../../assets/icon/person.svg"
           ></ion-icon>
@@ -83,7 +84,7 @@
       <div id="clock">
         <div class="content">
           <small>Focus Session</small>
-          <p style="font-size: 1.5em !important; margin-top: 0;">{{date.hour}}:{{date.minute}}</p>
+          <p style="font-size: 1.5em !important; margin-top: 0;">{{formatTime(date.hour)}} : {{formatTime(date.minute)}}</p>
         </div>
         <div class="clocks">
           <ion-icon slot="icon-only" size="large" src="../../../assets/icon/clock-1.svg"></ion-icon>

@@ -37,6 +37,8 @@ export class HomePage implements OnInit {
     { day: 9, topic: 'Adedaha', selected: false },
   ];
 
+  // mainData = JSON.parse(this.data.data.study_plan[0].title); THIS WOULD BE THE RESPONSE FORMAT
+
   notes = [
     {
       title: 'Sub header',
@@ -61,7 +63,7 @@ export class HomePage implements OnInit {
       let now = new Date();
       this.date = {
         minutes: now.getMinutes(),
-        hours: now.getHours()
+        hours: now.getHours(),
       }
     }, 60*1000 )
   }
@@ -75,6 +77,10 @@ export class HomePage implements OnInit {
 
     return buttonColor;
   }
+
+  formatTime(value: number): string {
+  return value < 10 ? '0' + value : value.toString();
+}
 
   onClick() {}
 }
