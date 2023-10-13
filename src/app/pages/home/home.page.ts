@@ -59,6 +59,7 @@ export class HomePage implements OnInit {
   theme = 'lark';
   information: any;
   plans: any;
+  summary: any;
 
   ngOnInit() {
     let now = new Date();
@@ -74,6 +75,7 @@ export class HomePage implements OnInit {
       // ! -- DEV:
       this.information = JSON.parse(this.clientSrv.promptData().data);
       this.plans = this.information.study_plan || this.information.studyPlan;
+      this.summary = this.information.summary;
       console.log(this.plans);
     } catch (e) {
       this.router.navigate(['/search']);
@@ -102,5 +104,6 @@ export class HomePage implements OnInit {
 
   displayInfo() {
     let plans = this.information.study_plan;
+    let summary = this.information.summary;
   }
 }

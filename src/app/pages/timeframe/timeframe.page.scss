@@ -1,4 +1,4 @@
-@import '../../../theme/mixins';
+@import "../../../theme/mixins";
 
 * {
   color: black;
@@ -32,11 +32,23 @@
     }
   }
 }
+#main.dark {
+  background: linear-gradient(rgba(19, 19, 14, 0.9), rgba(19, 19, 14, 0.9)),
+    url("../../../assets/images/bg-dark.png");
+  h2 {
+    color: white;
+  }
+  ion-note {
+    color: white !important;
+  }
+}
 
 #main-content {
-  min-width: 50%;
-  max-width: 50%;
+  width: 100%;
   height: 100%;
+  h2 {
+    text-align: center;
+  }
 }
 
 ion-item {

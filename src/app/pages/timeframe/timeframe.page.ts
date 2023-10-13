@@ -12,40 +12,41 @@ import { UtilityService } from 'src/app/services/utility.service';
   styleUrls: ['./timeframe.page.scss'],
 })
 export class TimeframePage implements OnInit {
-  theme = "light";
+  theme = 'dark';
   title: any;
 
   promptForm = new FormGroup({
     length: new FormControl(0, Validators.required),
     unit: new FormControl('days', Validators.required),
-    type: new FormControl('text', Validators.required)
-  })
+    type: new FormControl('text', Validators.required),
+  });
 
   constructor(
     private clientSrv: ClientService,
     private activatedRoute: ActivatedRoute,
     public utilSrv: UtilityService
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.activatedRoute.queryParamMap.subscribe((p: any) => {
       console.log(p);
       this.title = p['params']['title'];
-    })
+    });
   }
 
   onSubmit() {
     if (this.promptForm.invalid) {
-      return
+      return;
     }
 
     let data: PromptRequest = {
       title: this.title,
-      timeframe:`${this.promptForm.controls.length.value!}${this.promptForm.controls.unit.value}`,
-      type: this.promptForm.controls.type.value!
-    }
+      timeframe: `${this.promptForm.controls.length.value!}${
+        this.promptForm.controls.unit.value
+      }`,
+      type: this.promptForm.controls.type.value!,
+    };
 
     this.clientSrv.sendPromptRequest(data);
   }
-
 }

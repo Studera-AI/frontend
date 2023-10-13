@@ -7,7 +7,11 @@
 <ion-content [fullscreen]="true">
   <div id="main" [class]="theme">
     <div class="utilities">
-      <ion-button (click)="onClick()" size="small" [color]="checkButtonColor(theme)">
+      <ion-button
+        (click)="onClick()"
+        size="small"
+        [color]="checkButtonColor(theme)"
+      >
         <ion-icon
           slot="icon-only"
           src="../../../assets/icon/notification.svg"
@@ -63,7 +67,6 @@
           </ion-col>
         </ion-row>
       </ion-grid>
-
       <div id="prompt">
         <h1>Hi there, let's get started</h1>
         <ion-searchbar
