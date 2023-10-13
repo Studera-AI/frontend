@@ -51,7 +51,7 @@
       </div> -->
 
       <div class="notes">
-        <h2>{{data.title === "" ? "-" : data.title}}</h2>
+        <h2>{{data.title === "" ? "Learning" : data.title}}</h2>
 
         <swiper-container
           style="width: 95%; padding: 0.2em"
@@ -144,18 +144,29 @@
           ></ion-icon>
         </div>
       </div>
-      <!-- <div id="bot">
-        <div class="content"></div>
-        <input type="text" id="chatbot-input" placeholder="Type a message"/>
-      </div> -->
-      <!-- <ion-text color="palette-dark" style="border: 1px solid red; margin: 0 !important; padding: 0 !important">
-          <h5 style="border: 1px solid red; margin: 0 !important; padding: 0 !important">Take notes</h5>
-        </ion-text> -->
+      <div id="cip">
+        <p>Courses in progress</p>
+        <div class="cip-item">
+          <p>React Basics</p>
+          <p class="completed">50% done</p>
+        </div>
+        <div class="cip-item">
+          <p>Further Mathematics</p>
+          <p class="completed">10% done</p>
+        </div>
+        <div class="cip-item">
+          <p>Cryptography</p>
+          <p class="completed">38% done</p>
+        </div>
+      </div>
       <ion-textarea
         placeholder="Take notes"
         [autoGrow]="true"
         id="notepad"
-      ></ion-textarea>
+        autocorrect="on"
+        rows="10"
+      >
+      </ion-textarea>
     </div>
   </div>
 </ion-content>
