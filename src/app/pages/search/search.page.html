@@ -26,77 +26,117 @@
       <app-side-panel [theme]="theme"></app-side-panel>
     </div>
     <div id="onboarding">
-      <h1>Hi there, let's get started</h1>
-      <ion-searchbar
-        class="ion-no-padding"
-        search-icon="none"
-        placeholder="Search for a topic to study"
-        animated="true"
-        inputmode="text"
-        type="text"
-        (ionChange)="onSearchChange($event)"
-        [debounce]="250"
-        style="height: 60px; --border-radius: 15px !important"
-        class="custom"
-        [(ngModel)]="searchTerm"
-      >
-        <ion-icon
-          slot="end"
-          src="../../../assets/icon/search-custom.svg"
-        ></ion-icon>
-      </ion-searchbar>
+      <!-- <swiper-container navigation="true" id="history"> -->
+        <!-- <div class="swiper-button-prev"></div> -->
+        <!-- <div class="swiper-button-next"></div> -->
+        <!-- <div class="note-item">
+          <h3>{{ note.day && note.day.toString().toUpperCase().startsWith("D") ? note.day : "Day " + note.day }}</h3>
+          <ion-note>{{note.title}}({{note.time_allocation}})</ion-note>
+          <p style="margin-top: 0">{{note.summary}}</p>
+          <ion-note>Learning resources</ion-note>
+          <ul>
+              <li *ngFor="let resource of note.resources">
+                <span>{{resource.description}}</span>:<a [href]="resource.link">{{resource.link}}</a>
+              </li>
+            </ul>
 
-      <ion-grid fixed>
-        <ion-row>
-          <ion-col size-sm="12" size-md="6">
-            <ion-card color="dark" (click)="navigateToPrompt('Introduction to statistics')">
-              <ion-card-header>
-                <ion-card-title>Introduction to Statistics</ion-card-title>
-                <ion-card-subtitle
-                  >for beginners in secondary school</ion-card-subtitle
-                >
-              </ion-card-header>
-            </ion-card>
-          </ion-col>
-          <ion-col size="6" id="only-md">
-            <ion-card color="dark" (click)="navigateToPrompt('Deep Learning')">
-              <ion-card-header>
-                <ion-card-title>Deep Learning</ion-card-title>
-                <ion-card-subtitle>in computer science</ion-card-subtitle>
-              </ion-card-header>
-            </ion-card>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size-sm="12" size-md="6">
-            <ion-card color="dark" (click)="navigateToPrompt('Fluids and Thermodynamics')">
-              <ion-card-header>
-                <ion-card-title>Fluids and Thermodynamics</ion-card-title>
-                <ion-card-subtitle>in advanced physics</ion-card-subtitle>
-              </ion-card-header>
-            </ion-card>
-          </ion-col>
-          <ion-col size="6" id="only-md">
-            <ion-card color="dark" (click)="navigateToPrompt('Further Mathematics')">
-              <ion-card-header>
-                <ion-card-title>Further Mathematics</ion-card-title>
-                <ion-card-subtitle
-                  >according to university level programs</ion-card-subtitle
-                >
-              </ion-card-header>
+          </div> -->
+          <!-- <swiper-slide *ngFor="let learning of clientSrv.userLearnings()">
+            <p>{{learning.title}}</p>
+        </swiper-slide>
+
+      </swiper-container> -->
+      <ion-grid id="history">
+        <ion-row style="height: 90%">
+          <ion-col style="height: 100%" size="4" *ngFor="let learning of clientSrv.userLearnings()">
+            <ion-card (click)="clientSrv.generatePreviousLearning(learning)">
+              <ion-card-title color="palette-primary">{{learning.title}}</ion-card-title>
+              <ion-card-subtitle>
+                <ion-icon name="time-outline" color="palette-dark" size="large"></ion-icon>
+                <ion-note color="palette-dark">{{ learning.timeframe}}</ion-note>
+              </ion-card-subtitle>
+              <ion-card-subtitle>
+                <ion-icon [name]="learning.type === 'text' ? 'document-text-outline' : 'film-outline'" color="palette-dark" size="large"></ion-icon>
+                <ion-note color="palette-dark">{{ learning.type}}</ion-note>
+              </ion-card-subtitle>
             </ion-card>
           </ion-col>
         </ion-row>
       </ion-grid>
 
-      <ion-button
-        (click)="searchCustomTitle()"
-        class="continue"
-        [color]="checkButtonColor(theme)"
-      >
-        Continue
-        <ion-icon slot="end" name="arrow-forward-outline"></ion-icon>
-      </ion-button>
+      <div id="prompt">
+        <h1>Hi there, let's get started</h1>
+        <ion-searchbar
+          class="ion-no-padding"
+          search-icon="none"
+          placeholder="Search for a topic to study"
+          animated="true"
+          inputmode="text"
+          type="text"
+          (ionChange)="onSearchChange($event)"
+          [debounce]="250"
+          style="height: 60px; --border-radius: 15px !important"
+          class="custom"
+          [(ngModel)]="searchTerm"
+        >
+          <ion-icon
+            slot="end"
+            src="../../../assets/icon/search-custom.svg"
+          ></ion-icon>
+        </ion-searchbar>
+
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size-sm="12" size-md="6">
+              <ion-card color="dark" (click)="navigateToPrompt('Introduction to statistics')">
+                <ion-card-header>
+                  <ion-card-title>Introduction to Statistics</ion-card-title>
+                  <ion-card-subtitle
+                    >for beginners in secondary school</ion-card-subtitle
+                  >
+                </ion-card-header>
+              </ion-card>
+            </ion-col>
+            <ion-col size="6" id="only-md">
+              <ion-card color="dark" (click)="navigateToPrompt('Deep Learning')">
+                <ion-card-header>
+                  <ion-card-title>Deep Learning</ion-card-title>
+                  <ion-card-subtitle>in computer science</ion-card-subtitle>
+                </ion-card-header>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size-sm="12" size-md="6">
+              <ion-card color="dark" (click)="navigateToPrompt('Fluids and Thermodynamics')">
+                <ion-card-header>
+                  <ion-card-title>Fluids and Thermodynamics</ion-card-title>
+                  <ion-card-subtitle>in advanced physics</ion-card-subtitle>
+                </ion-card-header>
+              </ion-card>
+            </ion-col>
+            <ion-col size="6" id="only-md">
+              <ion-card color="dark" (click)="navigateToPrompt('Further Mathematics')">
+                <ion-card-header>
+                  <ion-card-title>Further Mathematics</ion-card-title>
+                  <ion-card-subtitle
+                    >according to university level programs</ion-card-subtitle
+                  >
+                </ion-card-header>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <ion-button
+          (click)="searchCustomTitle()"
+          class="continue"
+          [color]="checkButtonColor(theme)"
+        >
+          Continue
+          <ion-icon slot="end" name="arrow-forward-outline"></ion-icon>
+        </ion-button>
+      </div>
     </div>
   </div>
   <!-- <ion-header collapse="condense">

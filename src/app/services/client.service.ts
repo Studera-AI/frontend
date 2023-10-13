@@ -17,6 +17,8 @@ export class ClientService {
     data: ""
   });
 
+  userLearnings = signal<PromptData[]>([]);
+
   constructor(private http: HttpClient, private router: Router, private utilSrv: UtilityService) { }
 
 
@@ -41,5 +43,25 @@ export class ClientService {
         this.utilSrv.promptLoading.set(false);
       }
     })
+  }
+
+  getUserLearnings() {
+    this.http.get(`${environment.baseUrl}/user`).subscribe({
+      next:(r: any) => {
+        console.log(r)
+        this.userLearnings.set(r.user.learnings);
+      },
+      error: (e) => {
+        console.log(e)
+      },
+      complete: () => {
+        console.log("COMPLETED!")
+      }
+    })
+  }
+
+  generatePreviousLearning(data: PromptData) {
+    this.promptData.set(data);
+    this.router.navigate(["/home"])
   }
 }
