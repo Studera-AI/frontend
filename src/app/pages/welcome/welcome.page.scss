@@ -5,46 +5,75 @@ ion-col {
 }
 
 ion-img.logo {
-  width: 4em !important;
+  width: 3em !important;
   cursor: pointer;
+  transform: translateY(-1em); //QUICK FIX
+  // position: absolute;
+  // top: 1em;
+  // left: 2em;
 }
 
 ion-col {
   padding: 3em 2em;
   div > div {
-    @include flex(column, $justify: center, $align: flex-start, $gap: 0em);
-
     h1 {
       font-size: 1.75em;
+      font-weight: 700;
     }
     p {
-      font-size: 1em;
+      font-size: 16px;
     }
   }
 }
 
-#auth-group {
-  position: absolute;
-  right: 1em;
-  top: 0.5em;
-}
 .join-us {
   position: absolute;
   text-decoration-style: none;
-  font-size: 1.4em;
+  font-size: 1.2em;
   color: white;
   bottom: 4em;
   left: 2em;
 }
-ion-button {
-  --background: transparent;
-  background-color: transparent !important;
-  --border-color: white;
-  --border-style: solid;
-  --border-width: 2px;
-  --transition: background-color 15ms ease-in-out;
-  --border-radius: 25%;
+.join-us:hover {
+  color: rgb(50, 50, 210);
+}
+#auth-group {
+  position: absolute;
+  right: 1.5em;
+  top: 1em;
+  @include flex(row, $justify: center, $align: center, $gap: 1em);
+}
+.auth-button {
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 30px;
+  padding: 4px 10px;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+}
+.auth-button:hover {
+  background-color: #fff;
+  color: black;
+}
+.auth-button.signup {
+  background-color: #fff;
+  color: black;
+}
+.auth-button.signup:hover {
+  background-color: transparent;
+  color: white;
 }
 ion-button.register {
   --background: white;
+}
+.main-img {
+  width: 40vw;
+}
+.intro {
+  @include flex(column, $justify: center, $align: flex-start, $gap: 0em);
+}
+.second-header {
+  font-size: 2em !important;
+  font-weight: 700;
 }
