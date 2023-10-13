@@ -30,7 +30,7 @@
         >
           <h2>{{ item.question }}</h2>
           <ion-radio-group>
-            <ion-item *ngFor="let option of item.options">
+            <ion-item *ngFor="let option of item.options" lines="none">
               <ion-label>{{ option }}</ion-label>
               <ion-radio slot="start"></ion-radio>
             </ion-item>
