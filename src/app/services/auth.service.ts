@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
 import { UtilityService } from './utility.service';
+import { ClientService } from './client.service';
 
 @Injectable({
   providedIn: 'root',
@@ -17,7 +18,8 @@ export class AuthService {
   constructor(
     private httpClient: HttpClient,
     private router: Router,
-    private utilSrv: UtilityService
+    private utilSrv: UtilityService,
+    private clientSrv: ClientService
   ) {}
 
   register(data: RegisterData) {
@@ -33,6 +35,7 @@ export class AuthService {
           result.user.email,
           result.user.name,
           result.user.token,
+          result.user.id,
           expirationDate
         );
         this.isAuthenticated.set(true);
@@ -60,6 +63,7 @@ export class AuthService {
           result.user.email,
           result.user.name,
           result.user.token,
+          result.user.id,
           expirationDate
         );
         this.isAuthenticated.set(true);
@@ -85,11 +89,13 @@ export class AuthService {
     email: string,
     name: string,
     token: string,
+    id: string,
     expirationDate: Date
   ) {
     localStorage.setItem('email', email);
     localStorage.setItem('name', name);
     localStorage.setItem('token', token);
+    localStorage.setItem('id', id);
     localStorage.setItem('expirationDate', expirationDate.toISOString());
   }
 
@@ -107,6 +113,7 @@ export class AuthService {
       // this.authStatusListener.next(true);
       // this.router.navigateByUrl('/home');
     }
+    this.clientSrv.getUserLearnings()
   }
 
   getToken() {

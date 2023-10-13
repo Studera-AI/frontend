@@ -45,6 +45,14 @@ ion-grid {
 
 @font-face {
   font-family: "URW-Geometric";
+  src: url("./assets/fonts/URWGeometricSemiBold.otf");
+  font-weight: 500;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: "URW-Geometric";
   src: url("./assets/fonts/URWGeometricBlack.otf");
   font-weight: 900;
   font-style: normal;
