@@ -65,7 +65,8 @@ export class HomePage implements OnInit {
 
 
   ngOnInit() {
-    let now = new Date;
+    let now = new Date();
+
     this.date = {
       minute: now.getMinutes(),
       hour: now.getHours()
