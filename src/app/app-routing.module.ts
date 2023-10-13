@@ -56,6 +56,10 @@ const routes: Routes = [
         (m) => m.SignupPageModule
       ),
   },
+  {
+    path: 'analytics',
+    loadChildren: () => import('./pages/analytics/analytics.module').then( m => m.AnalyticsPageModule)
+  },
 ];
 
 @NgModule({
