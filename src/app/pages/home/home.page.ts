@@ -9,20 +9,17 @@ import { ClientService } from 'src/app/services/client.service';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
-  constructor(
-    private clientSrv: ClientService,
-    private router: Router
-  ) {
+  constructor(private clientSrv: ClientService, private router: Router) {
     effect(() => {
-      this.data = clientSrv.promptData()
-    })
+      this.data = clientSrv.promptData();
+    });
   }
 
   data: PromptData = {
-    data: "",
-    title: "",
-    timeframe: "",
-    type: "",
+    data: '',
+    title: '',
+    timeframe: '',
+    type: '',
   };
 
   date: any;
@@ -63,14 +60,13 @@ export class HomePage implements OnInit {
   information: any;
   plans: any;
 
-
   ngOnInit() {
     let now = new Date();
 
     this.date = {
       minute: now.getMinutes(),
-      hour: now.getHours()
-    }
+      hour: now.getHours(),
+    };
 
     try {
       // ! -- DEV:
@@ -80,7 +76,7 @@ export class HomePage implements OnInit {
       this.plans = this.information.study_plan || this.information.studyPlan;
       console.log(this.plans);
     } catch (e) {
-      this.router.navigate(["/search"])
+      this.router.navigate(['/search']);
     }
 
     this.displayInfo();
@@ -90,12 +86,11 @@ export class HomePage implements OnInit {
       this.date = {
         minutes: now.getMinutes(),
         hours: now.getHours(),
-      }
-    }, 60*1000 )
+      };
+    }, 60 * 1000);
   }
 
   onSearchChange(e: Event) {}
-
 
   checkButtonColor(theme: string) {
     let buttonColor = theme !== 'dark' ? 'palette-dark' : 'dark';

@@ -17,14 +17,26 @@
         ></ion-icon>
       </ion-button>
     </div>
-    <div class="app-side-panel">
-      <app-side-panel [theme]="theme"></app-side-panel>
-    </div>
+    <app-side-panel [theme]="theme"></app-side-panel>
     <!--END-->
 
     <!--MAIN CONTENT-->
     <div id="main-content">
-      <h1>Introduction to Biology</h1>
+      <h1>Questions</h1>
+      <ol id="mcq">
+        <li
+          class="mcq-options"
+          *ngFor="let item of testQuestions; let i = index"
+        >
+          <h2>{{ item.question }}</h2>
+          <ion-radio-group>
+            <ion-item *ngFor="let option of item.options">
+              <ion-label>{{ option }}</ion-label>
+              <ion-radio slot="start"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </li>
+      </ol>
     </div>
   </div>
 </ion-content>
