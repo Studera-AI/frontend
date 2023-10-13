@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./analytics.page.scss'],
 })
 export class AnalyticsPage implements OnInit {
+  theme = 'dark';
+  constructor() {}
 
-  constructor() { }
+  ngOnInit() {}
+  onClick() {}
 
-  ngOnInit() {
+  checkButtonColor(theme: string) {
+    let buttonColor = theme !== 'dark' ? 'palette-dark' : 'dark';
+
+    return buttonColor;
   }
-
 }

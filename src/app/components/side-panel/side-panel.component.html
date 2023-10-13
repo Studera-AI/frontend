@@ -10,7 +10,7 @@
     <li [ngClass]="{ active: active === 2 }" (click)="goto('/home')">
       <ion-icon [src]="homeIconSrc"></ion-icon>
     </li>
-    <li [ngClass]="{ active: active === 3 }">
+    <li [ngClass]="{ active: active === 3 }" (click)="goto('/analytics')">
       <ion-icon [src]="pieIconSrc"></ion-icon>
     </li>
     <li [ngClass]="{ active: active === 4 }" (click)="goto('/test')">
