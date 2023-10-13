@@ -50,10 +50,10 @@
       <div class="notes">
         <h2>{{data.title === "" ? "-" : data.title}}</h2>
 
-        <swiper-container>
+        <swiper-container style="width: 95%; padding: 0.2em" keyboard-enabled="true" space-between="35">
           <swiper-slide  *ngFor="let note of plans">
             <div class="note-item">
-              <h3>{{note.day}}</h3>
+              <h3>{{ note.day && note.day.toString().toUpperCase().startsWith("D") ? note.day : "Day " + note.day }}</h3>
               <ion-note>{{note.title}}({{note.time_allocation}})</ion-note>
               <p style="margin-top: 0">{{note.summary}}</p>
               <ion-note>Learning resources</ion-note>
