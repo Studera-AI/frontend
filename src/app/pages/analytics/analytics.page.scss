@@ -39,3 +39,20 @@
     url("../../../assets/images/bg-dark.png");
   color: white;
 }
+#main-content {
+  .calender {
+    @include flex(row, $gap: 5px);
+  }
+  .month {
+    background-color: #fff;
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 16px;
+  }
+  .days {
+    display: flex;
+    flex-direction: row;
+  }
+  .day {
+    padding: 10px;
+  }
+}
