@@ -9,7 +9,10 @@
 
 <ion-content [fullscreen]="true">
   <div id="main">
-    <app-side-panel style="position: fixed; left: 0.5rem; top: 0" [active]="2"></app-side-panel>
+    <app-side-panel
+      style="position: fixed; left: 0.5rem; top: 0"
+      [active]="2"
+    ></app-side-panel>
 
     <div id="main-content">
       <div id="search-content">
@@ -50,19 +53,28 @@
       <div class="notes">
         <h2>{{data.title === "" ? "-" : data.title}}</h2>
 
-        <swiper-container style="width: 95%; padding: 0.2em" keyboard-enabled="true" space-between="35">
-          <swiper-slide  *ngFor="let note of plans">
+        <swiper-container
+          style="width: 95%; padding: 0.2em"
+          keyboard-enabled="true"
+          space-between="35"
+        >
+          <swiper-slide *ngFor="let note of plans">
             <div class="note-item">
-              <h3>{{ note.day && note.day.toString().toUpperCase().startsWith("D") ? note.day : "Day " + note.day }}</h3>
+              <h3>
+                {{ note.day && note.day.toString().toUpperCase().startsWith("D")
+                ? note.day : "Day " + note.day }}
+              </h3>
               <ion-note>{{note.title}}({{note.time_allocation}})</ion-note>
               <p style="margin-top: 0">{{note.summary}}</p>
               <ion-note>Learning resources</ion-note>
               <ul>
                 <li *ngFor="let resource of note.resources">
-                  <span>{{resource.description}}</span>:<a [href]="resource.link">{{resource.link}}</a>
+                  <span>{{resource.description}}</span>:<a
+                    [href]="resource.link"
+                    >{{resource.link}}</a
+                  >
                 </li>
               </ul>
-
             </div>
           </swiper-slide>
         </swiper-container>
@@ -109,22 +121,41 @@
       <div id="clock">
         <div class="content">
           <small>Focus Session</small>
-          <p style="font-size: 1.5em !important; margin-top: 0;">{{date.hour < 10 ? '0' + date.hour : date.hour}} : {{date.minute < 10 ? '0'+date.minute : date.minute}}</p>
+          <p style="font-size: 1.5em !important; margin-top: 0">
+            {{date.hour < 10 ? '0' + date.hour : date.hour}} : {{date.minute <
+            10 ? '0'+date.minute : date.minute}}
+          </p>
         </div>
         <div class="clocks">
-          <ion-icon slot="icon-only" size="large" src="../../../assets/icon/clock-1.svg"></ion-icon>
-          <ion-icon slot="icon-only" size="large" src="../../../assets/icon/clock-2.svg"></ion-icon>
-          <ion-icon slot="icon-only" size="large" src="../../../assets/icon/clock-3.svg"></ion-icon>
+          <ion-icon
+            slot="icon-only"
+            size="large"
+            src="../../../assets/icon/clock-1.svg"
+          ></ion-icon>
+          <ion-icon
+            slot="icon-only"
+            size="large"
+            src="../../../assets/icon/clock-2.svg"
+          ></ion-icon>
+          <ion-icon
+            slot="icon-only"
+            size="large"
+            src="../../../assets/icon/clock-3.svg"
+          ></ion-icon>
         </div>
       </div>
-      <div id="bot">
+      <!-- <div id="bot">
         <div class="content"></div>
         <input type="text" id="chatbot-input" placeholder="Type a message"/>
-      </div>
-        <!-- <ion-text color="palette-dark" style="border: 1px solid red; margin: 0 !important; padding: 0 !important">
+      </div> -->
+      <!-- <ion-text color="palette-dark" style="border: 1px solid red; margin: 0 !important; padding: 0 !important">
           <h5 style="border: 1px solid red; margin: 0 !important; padding: 0 !important">Take notes</h5>
         </ion-text> -->
-        <ion-textarea placeholder="Take notes" [autoGrow]="true" id="notepad"></ion-textarea>
+      <ion-textarea
+        placeholder="Take notes"
+        [autoGrow]="true"
+        id="notepad"
+      ></ion-textarea>
     </div>
   </div>
 </ion-content>
