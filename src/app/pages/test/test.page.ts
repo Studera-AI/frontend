@@ -33,6 +33,6 @@ export class TestPage implements OnInit {
     // }
 
     // this.clientSrv.sendPromptRequest(data);
-    this.router.navigateByUrl('/assessment');
+    this.router.navigateByUrl('/test/assessment');
   }
 }

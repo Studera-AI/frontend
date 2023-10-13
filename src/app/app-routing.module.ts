@@ -29,13 +29,13 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () =>
       import('./pages/home/home.module').then((m) => m.HomePageModule),
-      canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
   },
   {
     path: 'search',
     loadChildren: () =>
       import('./pages/search/search.module').then((m) => m.SearchPageModule),
-      canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
   },
   {
     path: 'timeframe',
@@ -43,6 +43,18 @@ const routes: Routes = [
       import('./pages/timeframe/timeframe.module').then(
         (m) => m.TimeframePageModule
       ),
+  },
+  {
+    path: 'analytics',
+    loadChildren: () =>
+      import('./pages/analytics/analytics.module').then(
+        (m) => m.AnalyticsPageModule
+      ),
+  },
+  {
+    path: 'welcome',
+    loadChildren: () =>
+      import('./pages/welcome/welcome.module').then((m) => m.WelcomePageModule),
   },
   {
     path: 'test',
@@ -55,10 +67,6 @@ const routes: Routes = [
       import('./pages/auth/signup/signup.module').then(
         (m) => m.SignupPageModule
       ),
-  },
-  {
-    path: 'analytics',
-    loadChildren: () => import('./pages/analytics/analytics.module').then( m => m.AnalyticsPageModule)
   },
 ];
 

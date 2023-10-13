@@ -1,0 +1,50 @@
+@import "../../../theme/mixins";
+
+ion-col {
+  height: 100vh;
+}
+
+ion-img.logo {
+  width: 4em !important;
+  cursor: pointer;
+}
+
+ion-col {
+  padding: 3em 2em;
+  div > div {
+    @include flex(column, $justify: center, $align: flex-start, $gap: 0em);
+
+    h1 {
+      font-size: 1.75em;
+    }
+    p {
+      font-size: 1em;
+    }
+  }
+}
+
+#auth-group {
+  position: absolute;
+  right: 1em;
+  top: 0.5em;
+}
+.join-us {
+  position: absolute;
+  text-decoration-style: none;
+  font-size: 1.4em;
+  color: white;
+  bottom: 4em;
+  left: 2em;
+}
+ion-button {
+  --background: transparent;
+  background-color: transparent !important;
+  --border-color: white;
+  --border-style: solid;
+  --border-width: 2px;
+  --transition: background-color 15ms ease-in-out;
+  --border-radius: 25%;
+}
+ion-button.register {
+  --background: white;
+}
