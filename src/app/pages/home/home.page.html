@@ -50,10 +50,10 @@
       <div class="notes">
         <h2>{{data.title === "" ? "-" : data.title}}</h2>
 
-        <swiper-container>
+        <swiper-container style="width: 95%; padding: 0.2em" keyboard-enabled="true" space-between="35">
           <swiper-slide  *ngFor="let note of plans">
             <div class="note-item">
-              <h3>{{note.day}}</h3>
+              <h3>{{ note.day && note.day.toString().toUpperCase().startsWith("D") ? note.day : "Day " + note.day }}</h3>
               <ion-note>{{note.title}}({{note.time_allocation}})</ion-note>
               <p style="margin-top: 0">{{note.summary}}</p>
               <ion-note>Learning resources</ion-note>
@@ -120,22 +120,11 @@
       <div id="bot">
         <div class="content"></div>
         <input type="text" id="chatbot-input" placeholder="Type a message"/>
-        <!-- <ion-searchbar
-          placeholder="Type a message"
-          animated="true"
-          inputmode="text"
-          type="text"
-          (ionChange)="onSearchChange($event)"
-          [debounce]="250"
-          class="custom"
-        ></ion-searchbar> -->
       </div>
-      <div id="note"></div>
+        <!-- <ion-text color="palette-dark" style="border: 1px solid red; margin: 0 !important; padding: 0 !important">
+          <h5 style="border: 1px solid red; margin: 0 !important; padding: 0 !important">Take notes</h5>
+        </ion-text> -->
+        <ion-textarea placeholder="Take notes" [autoGrow]="true" id="notepad"></ion-textarea>
     </div>
   </div>
-
-  <!-- <div id="container">
-    <strong class="capitalize">HOME</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div> -->
 </ion-content>

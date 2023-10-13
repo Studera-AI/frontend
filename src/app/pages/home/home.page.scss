@@ -128,7 +128,7 @@ ion-content {
   width: 100%;
   background-color: #fff;
   border-radius: 15px;
-  padding: 1em;
+  padding: 0.5em;
   overflow: auto;
 
   h2 {
@@ -172,7 +172,7 @@ ion-content {
   height: 96%;
   width: 100%;
   padding-top: 0.5em;
-  @include flex(column, $justify: center, $align: center, $gap: 1em);
+  @include flex(column, $justify: center, $align: center, $gap: 0.5rem);
 
   #clock {
     border-radius: 15px;
@@ -201,7 +201,7 @@ ion-content {
   }
   #bot {
     border-radius: 15px;
-    width: 90%;
+    width: 100%;
     margin-inline: auto;
     height: 280px;
     background-color: #4D4F66;
@@ -211,9 +211,9 @@ ion-content {
     .content {
       width: 100%;
       margin-inline: auto;
-      height: 75%;
+      height: 85%;
       background: #adaeb825;
-      border-radius: 5px;
+      border-radius: 15px 15px 0 0;
     }
 
     #chatbot-input {
@@ -233,12 +233,21 @@ ion-content {
     }
 
   }
-  #note {
-    border: 3px solid red;
-    border-radius: 15px;
-    width: 90%;
+  #notepad {
+    border: 1px solid silver;
+    padding: calc(1rex) 0.5em;
+    border-radius: 10px;
+    width: 100%;
+    overflow: auto;
     margin-inline: auto;
     height: 300px;
+    height: auto;
+    font-size: 2ex;
+    background-color: #ffff007b;
+    color: #000034;
+    line-height: calc(1rex + 1px);
+    background-image: linear-gradient(transparent, transparent calc(1rex - 0.5px), #80a1c7 0px);
+    background-size: 100% calc(1rex + 1px);
   }
 
   .icon {
