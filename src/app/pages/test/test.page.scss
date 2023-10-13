@@ -15,6 +15,7 @@
   height: 100%;
   padding: 0.5em;
   position: relative;
+  color: black;
 
   app-side-panel {
     height: 100%;
@@ -36,15 +37,19 @@
 #main.dark {
   background: linear-gradient(rgba(19, 19, 14, 0.9), rgba(19, 19, 14, 0.9)),
     url("../../../assets/images/bg-dark.png");
+  color: white;
 }
 
 #main-content {
   width: 90%;
   height: fit-content;
-  color: black;
   padding: 1.5em 2.5em;
   h1 {
     font-weight: 700;
+    // padding: 10px 15px;
+    // background-color: #fff;
+    // border-radius: 10px;
+    // width: fit-content;
   }
   h3 {
     font-weight: 600;
@@ -58,5 +63,35 @@
     bottom: 2em;
     text-transform: none;
     --border-radius: 10px;
+  }
+}
+.introduction {
+  @include flex(column, $gap: 1em);
+}
+#instructions {
+  background-color: white;
+  border-radius: 15px;
+  padding: 0.5em 1.5em;
+  color: black;
+  .main-instructions {
+    font-weight: 600;
+  }
+  .quote {
+    width: 70%;
+    color: #00000070;
+    padding: 5px 15px;
+    padding-bottom: 0;
+    text-align: justify;
+  }
+  .quoter {
+    color: black;
+    font-weight: 600;
+    display: block;
+    text-align: right;
+  }
+  .luck {
+    margin-inline: auto;
+    font-weight: 600;
+    font-size: 16px;
   }
 }

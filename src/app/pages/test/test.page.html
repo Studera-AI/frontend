@@ -26,18 +26,28 @@
     <div id="main-content">
       <h1>Introduction to Biology</h1>
       <div class="introduction">
-        <h3>Day 1</h3>
-        <h3>Instructions</h3>
-        <p>
-          This test consists of 10 multiple-choice questions that will test your
-          knowledge and skills. You have a time limit of 10 minutes to complete
-          the entire quiz. Make sure to read each question carefully and select
-          your answers thoughtfully. Good luck!
-        </p>
-        <p>
-          This test can be retaken as many times as you want. However, the
-          questions will be randomized each time you take the test.
-        </p>
+        <div id="instructions">
+          <h3>Instructions</h3>
+          <p class="main-instructions">
+            This test consists of 10 multiple-choice questions that will test
+            your knowledge and skills. You have a time limit of 10 minutes to
+            complete the entire quiz. Make sure to read each question carefully
+            and select your answers thoughtfully.
+          </p>
+          <p class="quote">
+            "Success is no accident. It is hardwork, perseverance, learning,
+            studying, sacrifice, and most of all, love of what you are doing or
+            learning to do." <span class="quoter">- Pele</span>
+          </p>
+          <p class="luck">Good luck!</p>
+        </div>
+        <div id="note">
+          <h3>Note</h3>
+          <p>
+            This test can be retaken as many times as you want. However, the
+            questions will be randomized each time you take the test.
+          </p>
+        </div>
       </div>
       <ion-button
         (click)="navigateToAssessment()"
@@ -45,7 +55,7 @@
         [color]="checkButtonColor(theme)"
         size="large"
       >
-        Start Quiz
+        Start Test
         <ion-icon slot="end" name="arrow-forward-outline"></ion-icon>
       </ion-button>
     </div>
