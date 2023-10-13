@@ -103,6 +103,11 @@ ion-card-title {
   font-weight: 600;
 }
 
+ion-searchbar.custom {
+  color: white !important;
+  --color: white !important;
+}
+
 #main.dark {
   background: linear-gradient(rgba(19, 19, 14, 0.9), rgba(19, 19, 14, 0.9)),
     url("../../../assets/images/bg-dark.png");
@@ -111,6 +116,10 @@ ion-card-title {
     h1 {
       color: #fff;
     }
+  }
+  ion-searchbar.custom {
+    color: white !important;
+    --color: white !important;
   }
 
   #main-searchbar {

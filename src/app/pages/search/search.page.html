@@ -32,7 +32,6 @@
     <div id="onboarding">
       <h1>Hi there, let's get started</h1>
       <ion-searchbar
-        class="ion-no-padding"
         placeholder="Search for a topic to study"
         animated="true"
         inputmode="text"
@@ -105,6 +104,7 @@
         (click)="searchCustomTitle()"
         class="continue"
         [color]="checkButtonColor(theme)"
+        size="large"
       >
         Continue
         <ion-icon slot="end" name="arrow-forward-outline"></ion-icon>

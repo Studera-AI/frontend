@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./test.page.scss'],
 })
 export class TestPage implements OnInit {
-  theme = 'light';
+  theme = 'dark';
 
   //DUMMY CONTENT
   day = 'Day 1';
@@ -26,13 +26,6 @@ export class TestPage implements OnInit {
     return buttonColor;
   }
   navigateToAssessment() {
-    // let data = {
-    //   title: this.title,
-    //   timeframe:`${this.promptForm.controls.length.value!}${this.promptForm.controls.unit.value}`,
-    //   type: this.promptForm.controls.type.value!
-    // }
-
-    // this.clientSrv.sendPromptRequest(data);
     this.router.navigateByUrl('/test/assessment');
   }
 }

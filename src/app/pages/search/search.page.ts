@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./search.page.scss'],
 })
 export class SearchPage implements OnInit {
-  theme = 'light';
+  theme = 'dark';
   searchTerm = '';
 
   constructor(private router: Router) {}
@@ -29,13 +29,13 @@ export class SearchPage implements OnInit {
       return;
     }
 
-    this.navigateToPrompt(this.searchTerm)
+    this.navigateToPrompt(this.searchTerm);
   }
 
   navigateToPrompt(title: string) {
-    this.router.navigate(
-      ['/timeframe'],
-      {queryParams: {title}, replaceUrl: false}
-    )
+    this.router.navigate(['/timeframe'], {
+      queryParams: { title },
+      replaceUrl: false,
+    });
   }
 }

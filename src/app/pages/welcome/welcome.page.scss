@@ -33,6 +33,7 @@ ion-col {
   color: white;
   bottom: 4em;
   left: 2em;
+  @include flex(row, $gap: 0.5em);
 }
 .join-us:hover {
   color: rgb(50, 50, 210);
