@@ -35,7 +35,7 @@ const routes: Routes = [
     path: 'search',
     loadChildren: () =>
       import('./pages/search/search.module').then((m) => m.SearchPageModule),
-    canActivate: [AuthGuard],
+      canActivate: [AuthGuard],
   },
   {
     path: 'timeframe',
