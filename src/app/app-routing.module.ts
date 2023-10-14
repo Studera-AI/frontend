@@ -62,6 +62,13 @@ const routes: Routes = [
       import('./pages/test/test.module').then((m) => m.TestPageModule),
   },
   {
+    path: 'feedback',
+    loadChildren: () =>
+      import('./pages/feedback/feedback.module').then(
+        (m) => m.FeedbackPageModule
+      ),
+  },
+  {
     path: '**',
     loadChildren: () =>
       import('./pages/auth/signup/signup.module').then(
