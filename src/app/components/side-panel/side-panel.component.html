@@ -1,5 +1,5 @@
 <div id="side-panel">
-  <ion-button [color]="checkButtonColor(theme)" id="logo">
+  <ion-button [color]="checkButtonColor(theme)" id="logo" (click)="goto('/')">
     <ion-img src="../../../assets/icon/logo.png" alt="Studera logo"></ion-img>
   </ion-button>
 
@@ -18,7 +18,7 @@
     </li>
   </ul>
 
-  <ion-button (click)="onClick()" [color]="checkButtonColor(theme)">
+  <ion-button (click)="goto('/settings')" [color]="checkButtonColor(theme)">
     <ion-icon
       slot="icon-only"
       src="../../../assets/icon/settings-outline.svg"
