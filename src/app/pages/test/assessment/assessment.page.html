@@ -1,6 +1,7 @@
 <ion-content [fullscreen]="true">
   <div id="main" [class]="theme">
     <!--SIDE PANEL AND UTILITY ICONS-->
+    <app-side-panel [theme]="theme"></app-side-panel>
     <div class="utilities">
       <ion-button (click)="onClick()" [color]="checkButtonColor(theme)">
         <ion-icon
@@ -17,7 +18,6 @@
         ></ion-icon>
       </ion-button>
     </div>
-    <app-side-panel [theme]="theme"></app-side-panel>
     <!--END-->
 
     <!--MAIN CONTENT-->

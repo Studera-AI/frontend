@@ -1,7 +1,7 @@
 @import "../../../theme/mixins";
 
 #side-panel {
-  width: 2.5em;
+  width: 2.25rem;
   background-color: transparent;
   @include flex(column, $gap: 0.25em, $justify: space-between, $align: center);
   height: 100%;

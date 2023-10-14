@@ -10,10 +10,10 @@
   backdrop-filter: contrast(40%);
   min-height: 100%;
   padding: 0.5em;
-  position: relative;
+  padding-left: 2.5em;
 
   app-side-panel {
-    height: 100vh;
+    height: min(100vh, 100%);
   }
 
   .utilities {
