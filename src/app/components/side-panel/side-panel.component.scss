@@ -1,7 +1,7 @@
 @import "../../../theme/mixins";
 
 #side-panel {
-  width: 2.5em;
+  width: 2.25rem;
   background-color: transparent;
   @include flex(column, $gap: 0.25em, $justify: space-between, $align: center);
   height: 100%;
@@ -14,7 +14,7 @@ ion-icon {
 .active {
   background-color: #212faa33;
   border-right: 3px solid #212faa;
-  border-radius: 0 !important;
+  border-radius: 10px 0 0 10px !important;
 }
 
 ion-button {
@@ -50,8 +50,9 @@ ion-button {
     @include flex(column, $justify: center, $align: center);
   }
   li:hover {
-    background-color: #212faa33;
-    border-right: 3px solid #212faa;
+    // background-color: #212faa33;
+    // border-right: 3px solid #212faa;
+    @extend .active
   }
 }
 

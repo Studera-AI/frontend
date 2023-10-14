@@ -24,13 +24,14 @@ export class ClientService {
 
   sendPromptRequest(data: PromptRequest) {
     console.log("SENDING");
-    this.utilSrv.promptLoading.set(true)
+    this.utilSrv.promptLoading.set(true);
     this.http.post(`${environment.baseUrl}/resource`, data).subscribe({
       next: (r: any) => {
         console.log(r)
         let promptData: PromptData = {...data, data: r.data }
         console.log(promptData);
         this.promptData.set(promptData);
+        this.refreshLearnings();
         this.router.navigate(["/home"]);
 
       },
@@ -41,14 +42,26 @@ export class ClientService {
       complete: () => {
         console.log("COMPLETED!")
         this.utilSrv.promptLoading.set(false);
+
       }
     })
   }
 
+  private refreshLearnings() {
+    localStorage.removeItem("learnings");
+  }
+
   getUserLearnings() {
+    let learnings = localStorage.getItem("learnings");
+
+    if (learnings) {
+      this.userLearnings.set(JSON.parse(learnings));
+      return;
+    }
     this.http.get(`${environment.baseUrl}/user`).subscribe({
       next:(r: any) => {
-        console.log(r)
+        console.log(r);
+        localStorage.setItem("learnings", JSON.stringify(r.user.learnings))
         this.userLearnings.set(r.user.learnings);
       },
       error: (e) => {
