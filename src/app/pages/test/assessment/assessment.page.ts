@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ClientService } from 'src/app/services/client.service';
 
 @Component({
   selector: 'app-assessment',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AssessmentPage implements OnInit {
   theme = 'light';
-  constructor() {}
+  constructor(
+    public clientSrv: ClientService
+  ) {}
 
   ngOnInit() {}
 

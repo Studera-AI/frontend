@@ -42,7 +42,7 @@
           keyboard-enabled="true"
           space-between="35"
         >
-          <swiper-slide *ngFor="let note of plans">
+          <swiper-slide *ngFor="let note of plans; index as i">
             <div class="note-item">
               <h3>
                 {{ note.day && note.day.toString().toUpperCase().startsWith("D")
@@ -59,6 +59,16 @@
                   >
                 </li>
               </ul>
+              <br/>
+              <br/>
+              <ion-button (click)="writeTest(i+1, data.title)" [disabled]="utilSrv.testsLoading()" color="warning" expand="block">
+                <b *ngIf="!utilSrv.testsLoading()">Test Yourself</b>
+                <ion-spinner
+                  name="crescent"
+                  *ngIf="utilSrv.testsLoading()"
+                  style="color: #fff"
+                ></ion-spinner>
+              </ion-button>
             </div>
           </swiper-slide>
         </swiper-container>
