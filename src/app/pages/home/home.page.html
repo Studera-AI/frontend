@@ -51,11 +51,10 @@
                 </li>
               </ul>
               <br />
-              <br />
               <ion-button
                 (click)="writeTest(i+1, data.title)"
                 [disabled]="utilSrv.testsLoading()"
-                color="warning"
+                color="palette-dark"
                 expand="block"
               >
                 <b *ngIf="!utilSrv.testsLoading()">Test Yourself</b>
@@ -68,19 +67,6 @@
             </div>
           </swiper-slide>
         </swiper-container>
-
-        <!-- <div class="note-item" *ngFor="let note of plans">
-          <h3>{{note.day}}</h3>
-          <ion-note>{{note.title}}({{note.time_allocation}})</ion-note>
-          <p style="margin-top: 0">{{note.summary}}</p>
-          <ion-note>Learning resources</ion-note>
-          <ul>
-            <li *ngFor="let resource of note.resources">
-              <span>{{resource.description}}</span>:<a [href]="resource.link">{{resource.link}}</a>
-            </li>
-          </ul>
-
-        </div> -->
 
         <hr />
 
