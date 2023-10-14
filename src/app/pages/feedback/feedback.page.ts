@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ClientService } from 'src/app/services/client.service';
+import { UtilityService } from 'src/app/services/utility.service';
 
 @Component({
   selector: 'app-feedback',
@@ -8,7 +10,10 @@ import { Component, OnInit } from '@angular/core';
 export class FeedbackPage implements OnInit {
   theme = 'dark';
 
-  constructor() {}
+  constructor(
+    private clientSrv: ClientService,
+    public utilSrv: UtilityService
+  ) {}
 
   ngOnInit() {}
 
@@ -18,4 +23,5 @@ export class FeedbackPage implements OnInit {
     return buttonColor;
   }
   onClick() {}
+  onSubmit() {}
 }
