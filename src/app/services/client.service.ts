@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, signal } from '@angular/core';
-import { PromptData, PromptRequest } from '../interfaces/client';
+import { PromptData, PromptRequest, Test } from '../interfaces/client';
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
 import { UtilityService } from './utility.service';
@@ -16,6 +16,8 @@ export class ClientService {
     type: "",
     data: ""
   });
+
+  testData = signal<Test[]>([])
 
   userLearnings = signal<PromptData[]>([]);
 
@@ -76,5 +78,28 @@ export class ClientService {
   generatePreviousLearning(data: PromptData) {
     this.promptData.set(data);
     this.router.navigate(["/home"])
+  }
+
+  generateTests(day: number, title: string) {
+    this.utilSrv.testsLoading.set(true);
+    this.http.post(`${environment.baseUrl}/test`,{
+      day, title
+    }).subscribe({
+      next:(r: any) => {
+        console.log(r);
+        this.testData.set(r.res.test || r.res.questions);
+        this.router.navigate(["/test/assessment"])
+        // localStorage.setItem("learnings", JSON.stringify(r.user.learnings))
+        // this.userLearnings.set(r.user.learnings);
+      },
+      error: (e) => {
+        console.log(e)
+        this.utilSrv.testsLoading.set(false);
+      },
+      complete: () => {
+        console.log("COMPLETED!")
+        this.utilSrv.testsLoading.set(false);
+      }
+    })
   }
 }

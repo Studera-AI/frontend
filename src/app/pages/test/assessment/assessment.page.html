@@ -1,4 +1,4 @@
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" style="position: relative">
   <div id="main" [class]="theme">
     <!--SIDE PANEL AND UTILITY ICONS-->
     <app-side-panel [theme]="theme"></app-side-panel>
@@ -26,13 +26,13 @@
       <ol id="mcq">
         <li
           class="mcq-options"
-          *ngFor="let item of testQuestions; let i = index"
+          *ngFor="let item of clientSrv.testData(); let i = index"
         >
           <h2>{{ item.question }}</h2>
           <ion-radio-group>
             <ion-item *ngFor="let option of item.options" lines="none">
-              <ion-label>{{ option }}</ion-label>
-              <ion-radio slot="start"></ion-radio>
+              <!-- <ion-label>{{ option }}</ion-label> -->
+              <ion-radio value="end" alignment="start">{{ option }}</ion-radio>
             </ion-item>
           </ion-radio-group>
         </li>

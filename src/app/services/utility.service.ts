@@ -7,6 +7,7 @@ export class UtilityService {
   loginLoading = signal(false)
   signupLoading = signal(false)
   promptLoading = signal(false)
+  testsLoading = signal(false)
 
   constructor() { }
 }

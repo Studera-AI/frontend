@@ -10,3 +10,9 @@ export interface PromptRequest {
 export interface PromptData extends PromptRequest{
   data: string
 }
+
+export interface Test {
+  question: string;
+  options: string[];
+  answer: string
+}
