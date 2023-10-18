@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ClientService } from 'src/app/services/client.service';
+import { UtilityService } from 'src/app/services/utility.service';
 
 @Component({
   selector: 'app-search',
@@ -11,7 +12,7 @@ export class SearchPage implements OnInit {
   theme = 'dark';
   searchTerm = '';
 
-  constructor(private router: Router, public clientSrv: ClientService) {}
+  constructor(private router: Router, public clientSrv: ClientService, public utilSrv: UtilityService) {}
 
   ngOnInit() {}
 

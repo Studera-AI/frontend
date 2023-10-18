@@ -149,3 +149,14 @@ form {
     overflow: visible;
   }
 }
+
+// ion-modal {
+//   --ion-background-color: #ff464600;
+//   // width: 10em;
+// }
+
+ion-modal.my-modal-class::part(content){
+  height: 75%;
+  width: 25%;
+  border-radius: 15px;
+}
