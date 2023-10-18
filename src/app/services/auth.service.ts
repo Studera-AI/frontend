@@ -83,6 +83,7 @@ export class AuthService {
   logout() {
     localStorage.clear();
     this.isAuthenticated.set(false);
+    this.router.navigateByUrl('/login');
   }
 
   private saveSession(

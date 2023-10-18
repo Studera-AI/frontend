@@ -12,7 +12,7 @@
           size="small"
         ></ion-icon>
       </ion-button>
-      <ion-button (click)="onClick()" [color]="checkButtonColor(theme)">
+      <ion-button (click)="utilSrv.showAccountModal()" [color]="checkButtonColor(theme)">
         <ion-icon
           slot="icon-only"
           src="../../../assets/icon/person.svg"

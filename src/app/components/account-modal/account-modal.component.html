@@ -1,0 +1,32 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="medium" (click)="cancel()">Cancel</ion-button>
+    </ion-buttons>
+    <ion-title>Welcome</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header> -->
+<ion-content class="ion-padding" id="outer-container">
+  <!-- <ion-img src="../../../assets/images/account-bg.png" id="header-bg"></ion-img> -->
+  <div id="header-bg"></div>
+  <div id="personal-info-display">
+    <ion-avatar>
+      <img src="../../../assets/images/profile-placeholder.png" />
+    </ion-avatar>
+    <ion-text class="ion-text-center" color="primary">{{name}}</ion-text>
+    <ion-note>Streaks: 50 🔥</ion-note>
+  </div>
+  <ul id="plan-list">
+    <li class="header">Current plan: <span class="plan">Freemium</span></li>
+    <li><ion-icon slot="start" name="diamond-outline"></ion-icon> Upgrade to pro</li>
+    <li><ion-icon slot="start" name="settings-outline"></ion-icon> Manage account</li>
+    <li><ion-icon slot="start" name="help-circle-outline"></ion-icon> Help</li>
+  </ul>
+  <ion-button color="danger" (click)="signOut()" expand="block" fill="clear" shape="round">
+    <ion-icon slot="end" name="exit"></ion-icon>
+    Logout
+  </ion-button>
+</ion-content>
