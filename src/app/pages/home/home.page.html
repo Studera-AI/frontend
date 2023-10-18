@@ -86,7 +86,7 @@
             src="../../../assets/icon/notification.svg"
           ></ion-icon>
         </ion-button>
-        <ion-button (click)="onClick()" [color]="checkButtonColor(theme)">
+        <ion-button (click)="utilSrv.showAccountModal()" [color]="checkButtonColor(theme)">
           <ion-icon
             size="small"
             slot="icon-only"
