@@ -47,7 +47,8 @@
                     size="large"
                   ></ion-icon>
                   <ion-note [color]="checkButtonColor(theme)"
-                    >{{ learning.timeframe }}</ion-note
+                    >{{ learning.timeframe[0]}}
+                    {{learning.timeframe.substring(1)}}</ion-note
                   >
                 </ion-card-subtitle>
                 <ion-card-subtitle>

@@ -11,7 +11,7 @@ import { UtilityService } from 'src/app/services/utility.service';
 })
 export class HomePage implements OnInit {
   constructor(
-    private clientSrv: ClientService,
+    public clientSrv: ClientService,
     private router: Router,
     public utilSrv: UtilityService
   ) {

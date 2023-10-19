@@ -125,35 +125,27 @@
       </div>
       <div id="cip">
         <p>Courses in progress</p>
-        <div class="cip-item">
-          <span>React Basics</span>
-          <span class="completed">50% done</span>
-          <ion-img
-            class="forward-icon"
-            alt="Forward Icon"
-            src="../../../assets/icon/chevron-forward-outline.svg"
+        <div *ngFor="let learning of clientSrv.userLearnings()">
+          <div
+            class="cip-item"
+            (click)="clientSrv.generatePreviousLearning(learning)"
           >
-          </ion-img>
-        </div>
-        <div class="cip-item">
-          <span>Further Mathematics</span>
-          <span class="completed">10% done</span>
-          <ion-img
-            class="forward-icon"
-            alt="Forward Icon"
-            src="../../../assets/icon/chevron-forward-outline.svg"
-          >
-          </ion-img>
-        </div>
-        <div class="cip-item">
-          <span>Cryptography</span>
-          <span class="completed">38% done</span>
-          <ion-img
-            class="forward-icon"
-            alt="Forward Icon"
-            src="../../../assets/icon/chevron-forward-outline.svg"
-          >
-          </ion-img>
+            <span>{{learning.title}}</span>
+            <span class="completed"
+              >{{ learning.timeframe[0]}}
+              {{learning.timeframe.substring(1)}}</span
+            >
+            <span class="completed"
+              >{{ learning.type[0].toUpperCase()}}{{learning.type.substring(1)}}
+              resources</span
+            >
+            <ion-img
+              class="forward-icon"
+              alt="Forward Icon"
+              src="../../../assets/icon/chevron-forward-outline.svg"
+            >
+            </ion-img>
+          </div>
         </div>
       </div>
       <ion-textarea
