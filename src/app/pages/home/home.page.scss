@@ -232,26 +232,6 @@ ion-content {
       color: #adaeb8;
     }
   }
-  #notepad {
-    border: 1px solid silver;
-    padding: calc(1rex) 0.5em;
-    border-radius: 15px;
-    width: 100%;
-    overflow: auto;
-    margin-inline: auto;
-    height: 300px;
-    height: auto;
-    font-size: 2ex;
-    background-color: #ffff007b;
-    color: #000034;
-    line-height: calc(1rex + 1px);
-    background-image: linear-gradient(
-      transparent,
-      transparent calc(1rex - 0.5px),
-      #80a1c7 0px
-    );
-    background-size: 100% calc(1rex + 1px);
-  }
 
   .icon {
     width: 3em;
@@ -323,7 +303,36 @@ ion-textarea {
   padding: 0 !important;
   border: none !important;
 }
-ion-textarea > div {
+
+#notes-container {
+  @include debug;
+  width: 100%;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+
+#notepad {
+  border: 1px solid silver;
+  padding: calc(1rex) 1rem;
+  width: 100%;
+  overflow: auto;
+  margin-inline: auto;
+  height: 300px;
+  height: auto;
+  font-size: 2ex;
+  background-color: #ffff007b;
+  color: #000034;
+  line-height: calc(1rex + 1px);
+  background-size: 100% calc(1rex + 1px);
+  --padding-bottom: 0.8rem;
+  --padding-end: 0.8rem;
+  --padding-start: 0.8rem;
+  --padding-top: 4px;
+}
+
+#notes-header {
   font-family: "Comic Sans MS";
   position: relative;
   top: 0;
@@ -334,18 +343,31 @@ ion-textarea > div {
   font-weight: 600;
   color: #fff;
 }
+
+// ion-textarea {
+//   --background: #3880ff;
+//   --border-radius: 8px;
+//   --color: #3880ff;
+//   --placeholder-color: c5c5c5;
+//   --placeholder-font-style: initial;
+//   --placeholder-font-weight initial;
+//   --placeholder-opacity 0.5;
+// }
 #save-notes-btn {
   position: absolute;
-  bottom: 0;
-  right: 0;
-  // transform: translateX(55%);
-  width: 25%;
-  height: 15%;
-  background-color: goldenrod;
-  color: #fff;
-  font-weight: 600;
-  font-size: 14px;
-  @include flex(row, $justify: center, $align: center);
-  border-radius: 7.5px;
-  cursor: pointer;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  z-index: 10;
+  // opacity: 1 !important;
+  // // transform: translateX(55%);
+  // padding: 0.8rem;
+  // width: 30px;
+  // height: 10px;
+  // background-color: rgb(234, 72, 72);
+  // color: #fff;
+  // font-weight: 600;
+  // font-size: 14px;
+  // @include flex(row, $justify: center, $align: center);
+  // border-radius: 7.5px;
+  // cursor: pointer;
 }

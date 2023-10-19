@@ -148,7 +148,10 @@
           </div>
         </div>
       </div>
-      <ion-textarea
+      <div id="notes-container">
+        <div id="notes-header">Notes</div>
+        <ion-button id="save-notes-btn" color="warning">Save</ion-button>
+        <ion-textarea
         label=""
         labelPlacement="stacked"
         placeholder=""
@@ -157,10 +160,9 @@
         autocorrect="on"
         rows="10"
         lines="none"
-      >
-        <div>Notes</div>
-        <button id="save-notes-btn">Save</button>
-      </ion-textarea>
-    </div>
+        >
+        </ion-textarea>
+      </div>
+</div>
   </div>
 </ion-content>
