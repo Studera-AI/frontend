@@ -28,13 +28,7 @@ export class TestPage implements OnInit {
     return buttonColor;
   }
   navigateToAssessment() {
-    // let data = {
-    //   title: this.title,
-    //   timeframe:`${this.promptForm.controls.length.value!}${this.promptForm.controls.unit.value}`,
-    //   type: this.promptForm.controls.type.value!
-    // }
-
-    // this.clientSrv.sendPromptRequest(data);
-    this.router.navigateByUrl('/test/assessment');
+    console.log(this.testTitle);
+    this.clientSrv.generateTests(1, this.clientSrv.userLearnings()[0].title);
   }
 }

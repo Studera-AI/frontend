@@ -51,7 +51,7 @@ export class ClientService {
     });
   }
 
-  private refreshLearnings() {
+  refreshLearnings() {
     localStorage.removeItem('learnings');
   }
 
@@ -92,7 +92,7 @@ export class ClientService {
       .subscribe({
         next: (r: any) => {
           console.log(r);
-          this.testData.set(r.res.test || r.res.questions);
+          this.testData.set(r.res.questions || r.res.test);
           this.router.navigate(['/test/assessment']);
           // localStorage.setItem("learnings", JSON.stringify(r.user.learnings))
           // this.userLearnings.set(r.user.learnings);
