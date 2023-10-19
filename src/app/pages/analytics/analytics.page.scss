@@ -324,9 +324,11 @@
         .query-history-content-list-header {
           font-weight: 700;
           text-decoration: underline;
+          font-size: 1rem;
         }
 
         li {
+          font-size: 0.83rem;
 
           @include flex(row, $justify: flex-start)
         }
