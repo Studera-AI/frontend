@@ -12,7 +12,10 @@
           size="small"
         ></ion-icon>
       </ion-button>
-      <ion-button (click)="utilSrv.showAccountModal()" [color]="checkButtonColor(theme)">
+      <ion-button
+        (click)="utilSrv.showAccountModal()"
+        [color]="checkButtonColor(theme)"
+      >
         <ion-icon
           slot="icon-only"
           src="../../../assets/icon/person.svg"
@@ -24,7 +27,7 @@
       <app-side-panel [theme]="theme"></app-side-panel>
     </div>
     <!-- END OF COMPONENTS -->
-    <form id="main-form">
+    <form id="main-form" [formGroup]="feedbackForm">
       <ion-grid fixed>
         <h2>Help Us Improve! Share Your Thoughts</h2>
         <ion-row>
@@ -34,6 +37,7 @@
               <ion-input
                 type="email"
                 placeholder="Enter your email"
+                formControlName="email"
               ></ion-input>
             </ion-item>
           </ion-col>
@@ -45,6 +49,7 @@
               <ion-textarea
                 rows="6"
                 placeholder="Enter your feedback here"
+                formControlName="feedback"
               ></ion-textarea>
             </ion-item>
           </ion-col>

@@ -7,7 +7,7 @@
     <li [ngClass]="{ active: active === 1 }" (click)="goto('/search')">
       <ion-icon [src]="layerIconSrc"></ion-icon>
     </li>
-    <li [ngClass]="{ active: active === 2 }" (click)="goto('/home')">
+    <li [ngClass]="{ active: active === 2 }" (click)="navigateToHome()">
       <ion-icon [src]="homeIconSrc"></ion-icon>
     </li>
     <li [ngClass]="{ active: active === 3 }" (click)="goto('/analytics')">
