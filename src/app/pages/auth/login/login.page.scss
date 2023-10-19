@@ -1,8 +1,9 @@
 @import "../../../../theme/mixins";
 
 ion-content {
-  --background: #fff url("../../../../assets/images/main_bg.png") no-repeat
-    center center / cover;
+  --background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    #fff url("../../../../assets/images/main_bg.png") no-repeat center
+      center/cover;
   height: 100vh;
 }
 

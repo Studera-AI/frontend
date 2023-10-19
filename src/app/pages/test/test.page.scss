@@ -69,22 +69,21 @@
   @include flex(column, $gap: 1em);
 }
 #instructions {
-  background-color: white;
-  border-radius: 15px;
-  padding: 0.5em 1.5em;
-  color: black;
+  // border-radius: 15px;
+  // padding: 0.5em 1.5em;
+  color: white;
   .main-instructions {
     font-weight: 600;
   }
   .quote {
     width: 70%;
-    color: #00000070;
+    color: #ffffff90;
     padding: 5px 15px;
     padding-bottom: 0;
     text-align: justify;
   }
   .quoter {
-    color: black;
+    color: #fff;
     font-weight: 600;
     display: block;
     text-align: right;
