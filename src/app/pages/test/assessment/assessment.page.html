@@ -38,7 +38,12 @@
         </li>
       </ol>
     </div>
-    <ion-button class="continue" [color]="checkButtonColor(theme)" size="large">
+    <ion-button
+      (click)="markTest()"
+      class="continue"
+      [color]="checkButtonColor(theme)"
+      size="large"
+    >
       Submit
       <ion-icon slot="end" name="arrow-forward-outline"></ion-icon>
     </ion-button>

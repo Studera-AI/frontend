@@ -68,7 +68,14 @@ export class AuthService {
         );
         this.isAuthenticated.set(true);
         console.log('Signed in');
-        this.router.navigateByUrl('/search');
+        const homeData: any = this.clientSrv.generatePreviousLearning(
+          this.clientSrv.userLearnings()[0]
+        );
+        if (homeData) {
+          this.router.navigateByUrl('/home');
+        } else {
+          this.router.navigateByUrl('/search');
+        }
       },
       error: (e) => {
         console.log(e);
@@ -114,12 +121,12 @@ export class AuthService {
       // this.authStatusListener.next(true);
       // this.router.navigateByUrl('/home');
     }
-    this.clientSrv.getUserLearnings()
+    this.clientSrv.getUserLearnings();
   }
 
   getToken() {
-    let token = localStorage.getItem("token");
-    return token
+    let token = localStorage.getItem('token');
+    return token;
   }
 
   private getAuthData() {

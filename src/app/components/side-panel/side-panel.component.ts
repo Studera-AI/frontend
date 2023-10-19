@@ -1,5 +1,6 @@
 import { Component, HostBinding, Input, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { ClientService } from 'src/app/services/client.service';
 
 @Component({
   selector: 'app-side-panel',
@@ -19,7 +20,10 @@ export class SidePanelComponent implements OnInit {
   @HostBinding('class.dark')
   isDark: boolean = true;
 
-  constructor(private navCtrl: NavController) {}
+  constructor(
+    private navCtrl: NavController,
+    private clientSrv: ClientService
+  ) {}
 
   ngOnInit() {
     if (this.theme == 'dark') {
@@ -38,5 +42,9 @@ export class SidePanelComponent implements OnInit {
 
   goto(route: string) {
     this.navCtrl.navigateForward(route);
+  }
+  navigateToHome() {
+    this.clientSrv.generatePreviousLearning(this.clientSrv.userLearnings()[0]);
+    this.goto('/home');
   }
 }
