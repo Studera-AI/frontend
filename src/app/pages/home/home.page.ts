@@ -10,7 +10,11 @@ import { UtilityService } from 'src/app/services/utility.service';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
-  constructor(private clientSrv: ClientService, private router: Router, public utilSrv: UtilityService) {
+  constructor(
+    public clientSrv: ClientService,
+    private router: Router,
+    public utilSrv: UtilityService
+  ) {
     effect(() => {
       this.data = clientSrv.promptData();
     });
@@ -112,7 +116,7 @@ export class HomePage implements OnInit {
   }
 
   writeTest(day: number, title: string) {
-    console.log("Setting up tests");
+    console.log('Setting up tests');
     this.clientSrv.generateTests(day, title);
   }
 }

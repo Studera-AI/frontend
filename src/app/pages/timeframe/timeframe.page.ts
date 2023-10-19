@@ -38,6 +38,7 @@ export class TimeframePage implements OnInit {
     if (this.promptForm.invalid) {
       return;
     }
+    alert('This might take a while, Sit tight! :)');
 
     let data: PromptRequest = {
       title: this.title,
