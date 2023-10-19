@@ -1,4 +1,4 @@
-import { Component, HostBinding, Input, OnInit } from '@angular/core';
+import { Component, HostBinding, Input, OnInit, signal } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { ClientService } from 'src/app/services/client.service';
 
@@ -18,7 +18,7 @@ export class SidePanelComponent implements OnInit {
   @Input() theme: string = '';
   @Input() active: number = 1;
   @HostBinding('class.dark')
-  isDark: boolean = true;
+  isDark = signal(false)
 
   constructor(
     private navCtrl: NavController,
@@ -27,9 +27,9 @@ export class SidePanelComponent implements OnInit {
 
   ngOnInit() {
     if (this.theme == 'dark') {
-      this.isDark = false;
+      this.isDark.set(true);
       console.log('Dark');
-      document.getElementById('side-panel')?.classList.add('dark');
+      // document.getElementById('side-panel')?.classList.add('dark');
     }
   }
   checkButtonColor(theme: string) {
