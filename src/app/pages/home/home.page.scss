@@ -316,6 +316,7 @@ ion-note {
 ion-textarea {
   overflow: hidden;
   padding: 0 !important;
+  border: none !important;
 }
 ion-textarea > div {
   font-family: "Comic Sans MS";
@@ -326,4 +327,20 @@ ion-textarea > div {
   background-color: goldenrod;
   @include flex(row, $justify: center, $align: center);
   font-weight: 600;
+  color: #fff;
+}
+#save-notes-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  // transform: translateX(55%);
+  width: 25%;
+  height: 15%;
+  background-color: goldenrod;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  @include flex(row, $justify: center, $align: center);
+  border-radius: 7.5px;
+  cursor: pointer;
 }

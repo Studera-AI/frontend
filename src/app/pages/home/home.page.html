@@ -86,7 +86,10 @@
             src="../../../assets/icon/notification.svg"
           ></ion-icon>
         </ion-button>
-        <ion-button (click)="utilSrv.showAccountModal()" [color]="checkButtonColor(theme)">
+        <ion-button
+          (click)="utilSrv.showAccountModal()"
+          [color]="checkButtonColor(theme)"
+        >
           <ion-icon
             size="small"
             slot="icon-only"
@@ -156,7 +159,7 @@
       <ion-textarea
         label=""
         labelPlacement="stacked"
-        placeholder="Write your notes here..."
+        placeholder=""
         [autoGrow]="true"
         id="notepad"
         autocorrect="on"
@@ -164,6 +167,7 @@
         lines="none"
       >
         <div>Notes</div>
+        <button id="save-notes-btn">Save</button>
       </ion-textarea>
     </div>
   </div>
