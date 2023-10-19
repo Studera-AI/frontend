@@ -44,14 +44,10 @@ ion-button {
     text-align: center;
     font-size: 1em;
     padding: 10px;
-    // border-top-left-radius: 14px;
-    // border-bottom-left-radius: 14px;
     cursor: pointer;
     @include flex(column, $justify: center, $align: center);
   }
   li:hover {
-    // background-color: #212faa33;
-    // border-right: 3px solid #212faa;
     @extend .active
   }
 }

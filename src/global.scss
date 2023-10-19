@@ -31,28 +31,6 @@ ion-grid {
 
 @font-face {
   font-family: "URW-Geometric";
-  src: url("./assets/fonts/URWGeometricRegular.otf");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "URW-Geometric";
-  src: url("./assets/fonts/URWGeometricBold.otf");
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "URW-Geometric";
-  src: url("./assets/fonts/URWGeometricSemiBold.otf");
-  font-weight: 500;
-  font-style: normal;
-}
-
-
-@font-face {
-  font-family: "URW-Geometric";
   src: url("./assets/fonts/URWGeometricBlack.otf");
   font-weight: 900;
   font-style: normal;
@@ -62,6 +40,34 @@ ion-grid {
   font-family: "URW-Geometric";
   src: url("./assets/fonts/URWGeometricExtraBold.otf");
   font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "URW-Geometric";
+  src: url("./assets/fonts/URWGeometricBold.otf");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "URW-Geometric";
+  src: url("./assets/fonts/URWGeometricSemiBold.otf");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "URW-Geometric";
+  src: url("./assets/fonts/URWGeometricMedium.otf");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "URW-Geometric";
+  src: url("./assets/fonts/URWGeometricRegular.otf");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -79,6 +85,12 @@ ion-grid {
   font-style: normal;
 }
 
+@font-face {
+  font-family: "URW-Geometric";
+  src: url("./assets/fonts/URWGeometricThin.otf");
+  font-weight: 100;
+  font-style: normal;
+}
 html {
   font-size: 20px;
 }

@@ -1,4 +1,4 @@
-<div id="side-panel">
+<div id="side-panel" [ngClass]="{'dark': isDark()}">
   <ion-button [color]="checkButtonColor(theme)" id="logo" (click)="goto('/')">
     <ion-img src="../../../assets/icon/logo.png" alt="Studera logo"></ion-img>
   </ion-button>

@@ -18,9 +18,86 @@
       </ion-button>
     </div>
     <div class="app-side-panel">
-      <app-side-panel [theme]="theme"></app-side-panel>
+      <app-side-panel [theme]="theme" [active]="3"></app-side-panel>
     </div>
     <div id="main-content">
+      <div id="calendar">
+        <div class="months">
+          <span *ngFor="let month of months" [ngClass]="{'selected': month.selected}">{{month.name}}</span>
+        </div>
+        <div class="days">
+          <div [attr.day-of-week]="getDayOfWeek(day)" *ngFor="let day of days" [ngClass]="{'blank': day > currentDay, 'show': day <= currentDay}">
+            {{day > currentDay ? '' : day}}
+            <sup *ngIf="day <= currentDay">{{getSuffix(day)}}</sup>
+          </div>
+        </div>
+      </div>
+      <div id="courses">
+        <span id="course-header">Courses in progress</span>
+        <div class="fluids-and-thermodynamics outer-div">
+          <ion-img src="../../../assets/images/thermometer.png"></ion-img>
+          <ion-text>
+            Fluids and thermodynamics
+          </ion-text>
+        </div>
+        <div class="intro-to-chemistry outer-div">
+          <ion-img class="image" src="../../../assets/images/test-tubes.png"></ion-img>
+          <div class="text">
+            <ion-text>Introduction to Chemistry</ion-text>
+            <br>
+            <ion-note>An overview of the basics</ion-note>
+          </div>
+          <div class="countdown">
+            <div class="inner-div">
+              <ion-text>6</ion-text>
+              <ion-note>days left</ion-note>
+            </div>
+          </div>
+          <div class="loading-bar"></div>
+          <ion-note class="loading-percent">45%</ion-note>
+
+        </div>
+        <div class="further-maths outer-div">
+          <ion-text>Further Maths</ion-text>
+          <div class="further-maths-image">
+            <!-- <ion-img src="../../../assets/images/math-instruments.png"></ion-img> -->
+          </div>
+        </div>
+      </div>
+      <div id="performance">
+        <div class="test-performance">
+          <div class="test-performance-header">
+            <p>
+              Test performance: <span>Week 1</span>
+            </p>
+            <ion-icon name="chevron-back-outline" style="background-color: #D9D9D9; margin-left: 1rem;"></ion-icon>
+            <ion-icon name="chevron-forward-outline" style="background-color: #C2C2C2"></ion-icon>
+          </div>
+          <div class="test-performance-image">
+            <!-- <img src="../../../assets/images/graph.png"/> -->
+          </div>
+        </div>
+        <div class="query-history">
+          <div class="query-history-header">
+            <p>
+              Query history: <span>Week 1</span>
+            </p>
+            <ion-icon name="chevron-back-outline" style="background-color: #D9D9D9; margin-left: 1rem;"></ion-icon>
+            <ion-icon name="chevron-forward-outline" style="background-color: #C2C2C2"></ion-icon>
+          </div>
+          <div class="query-history-content">
+            <div class="query-history-content-image"></div>
+            <ul class="query-history-content-list">
+              <li class="query-history-content-list-header">Recommended Courses</li>
+              <li *ngFor="let course of recommendedCourses">
+                <ion-icon name="ellipse" [style.color]="course.badgeColor"></ion-icon>
+                {{course.name}}</li>
+            </ul>
+            <!-- <img src="../../../assets/images/graph.png"/> -->
+          </div>
+        </div>
+      </div>
+
       <!-- <div class="calender" *ngFor="let month of months">
         <div class="month">{{month}}</div>
       </div>
@@ -30,7 +107,7 @@
           <span>{{day}}</span>
         </div>
       </div> -->
-      <div>No Active Courses to display..</div>
+      <!-- <div>No Active Courses to display..</div> -->
     </div>
   </div>
 </ion-content>
